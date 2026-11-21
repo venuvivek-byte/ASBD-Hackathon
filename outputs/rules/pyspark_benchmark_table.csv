@@ -1,5 +1,5 @@
-Scale_Factor,Records_N,Workload_Type,Single_Node_Time_Sec,Single_Node_Min_Sec,Single_Node_Max_Sec,PySpark_Time_Sec,PySpark_Min_Sec,PySpark_Max_Sec,Spark_Cold_Start_Sec,Relative_Speedup,Regime
-1x,50,Empirical Baseline (50 real records),0.0612,0.0598,0.0631,25.421,25.105,25.89,20.35,0.0024,Overhead Dominated (Single-Node 415x Faster)
-10x,500,Synthetic Scaling Stress Test,1.482,1.451,1.52,5.412,5.295,5.601,0.0,0.27,Overhead Dominated
-100x,5000,Synthetic Scaling Stress Test,6.845,6.71,7.012,4.198,4.085,4.35,0.0,1.63,"Parallel Accelerated (Crossover Interval [500, 5,000])"
-1000x,50000,Synthetic Scaling Stress Test,71.854,70.92,73.11,13.818,13.45,14.12,0.0,5.2,Massive Parallel Speedup (5.20x)
+Scale_Factor,Records_N,Workload_Type,Single_Node_Time_Sec,Single_Node_Min_Sec,Single_Node_Max_Sec,PySpark_Time_Sec,PySpark_Min_Sec,PySpark_Max_Sec,Spark_Cold_Start_Sec,Relative_Speedup,Throughput_Rec_Per_Sec,Single_Node_Itemsets,PySpark_Itemsets,Regime
+1x,50,Empirical Baseline (50 real records),0.3199,0.3024,0.3642,5.605,4.9484,5.9277,27.3466,0.06,8.9,284,284,Single-Node Faster (Spark Overhead Dominated)
+10x,500,Synthetic Scaling Stress Test,0.7946,0.7839,1.2743,2.8964,2.6041,3.2521,0.0,0.27,172.6,284,284,Single-Node Faster (Spark Overhead Dominated)
+100x,5000,Synthetic Scaling Stress Test,8.5949,8.3387,8.9441,4.8568,4.0596,4.8585,0.0,1.77,1029.5,284,284,Moderate Parallel Acceleration
+1000x,50000,Synthetic Scaling Stress Test,84.5109,83.8367,84.8575,14.9264,13.2902,15.7989,0.0,5.66,3349.8,284,284,Strong Parallel Acceleration
