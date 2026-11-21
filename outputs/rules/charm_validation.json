@@ -1,0 +1,29 @@
+{
+    "status": "PASSED",
+    "exact_match_confirmed": true,
+    "dataset": "data\\transactions.csv",
+    "num_transactions": 50,
+    "min_support": 0.1,
+    "min_support_count": 5,
+    "metrics": {
+        "total_frequent_itemsets_FI": 284,
+        "total_closed_frequent_itemsets_CFI": 96,
+        "compression_ratio": 0.662,
+        "compression_percentage": "66.20%",
+        "redundant_itemsets_eliminated": 188
+    },
+    "performance": {
+        "reference_runtime_ms": 5.864,
+        "charm_runtime_ms": 1.361,
+        "speedup_factor": 4.31
+    },
+    "audit_checks": {
+        "cfi_count_match": true,
+        "zero_missing_itemsets": true,
+        "zero_extra_itemsets": true,
+        "support_equality_100pct": true,
+        "zero_subsumption_violations": true
+    },
+    "timestamp": "2026-11-21 09:41:38 UTC",
+    "auditor": "Agent 1 - CHARM Algorithm Auditor"
+}

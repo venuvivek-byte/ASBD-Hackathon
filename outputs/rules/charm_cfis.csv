@@ -1,97 +1,97 @@
-itemset,length,support_count,support
-"('Country_USA',)",1,41,0.82
-"('Country_USA', 'League_NFL', 'Sport_American Football')",3,26,0.52
-"('Tenure_Short',)",1,18,0.36
-"('Growth_High',)",1,17,0.34
-"('Growth_Low',)",1,17,0.34
-"('PricePaid_Low',)",1,17,0.34
-"('PricePaid_Med',)",1,17,0.34
-"('Value_High',)",1,17,0.34
-"('Value_Low',)",1,17,0.34
-"('Country_USA', 'PricePaid_Low')",2,16,0.32
-"('Country_USA', 'Tenure_Long')",2,16,0.32
-"('Growth_Med',)",1,16,0.32
-"('PricePaid_High',)",1,16,0.32
-"('Tenure_Med',)",1,16,0.32
-"('Value_Med',)",1,16,0.32
-"('Country_USA', 'PricePaid_Low', 'Tenure_Long')",3,15,0.3
-"('Country_USA', 'Growth_Med')",2,15,0.3
-"('Country_USA', 'Value_Low')",2,15,0.3
-"('Country_USA', 'Value_Med')",2,15,0.3
-"('Country_USA', 'PricePaid_High')",2,14,0.28
-"('Country_USA', 'League_NFL', 'PricePaid_Low', 'Sport_American Football')",4,13,0.26
-"('Country_USA', 'Growth_High')",2,13,0.26
-"('Country_USA', 'Growth_Low')",2,13,0.26
-"('Country_USA', 'Tenure_Short')",2,13,0.26
-"('PricePaid_High', 'Tenure_Short')",2,13,0.26
-"('Country_USA', 'League_NFL', 'PricePaid_Low', 'Sport_American Football', 'Tenure_Long')",5,12,0.24
-"('Country_USA', 'Tenure_Med')",2,12,0.24
-"('PricePaid_Med', 'Tenure_Med')",2,12,0.24
-"('Country_USA', 'PricePaid_High', 'Tenure_Short')",3,11,0.22
-"('Country_USA', 'PricePaid_Med')",2,11,0.22
-"('Country_USA', 'Value_High')",2,11,0.22
-"('Tenure_Short', 'Value_Low')",2,11,0.22
-"('Country_USA', 'Growth_Med', 'League_NFL', 'Sport_American Football')",4,10,0.2
-"('Country_USA', 'League_NFL', 'Sport_American Football', 'Value_Low')",4,10,0.2
-"('Country_USA', 'League_NFL', 'Sport_American Football', 'Value_Med')",4,10,0.2
-"('Growth_High', 'PricePaid_Med')",2,10,0.2
-"('Country_USA', 'League_NBA', 'Sport_Basketball')",3,9,0.18
-"('Country_USA', 'Tenure_Short', 'Value_Low')",3,9,0.18
-"('PricePaid_High', 'Tenure_Short', 'Value_Low')",3,9,0.18
-"('Sport_Soccer',)",1,9,0.18
-"('Country_USA', 'Growth_High', 'League_NFL', 'Sport_American Football')",4,8,0.16
-"('Country_USA', 'Growth_Low', 'League_NFL', 'Sport_American Football')",4,8,0.16
-"('Country_USA', 'League_NFL', 'PricePaid_High', 'Sport_American Football')",4,8,0.16
-"('Country_USA', 'League_NFL', 'Sport_American Football', 'Tenure_Med')",4,8,0.16
-"('Country_USA', 'PricePaid_High', 'Tenure_Short', 'Value_Low')",4,8,0.16
-"('Country_USA', 'PricePaid_Med', 'Tenure_Med')",3,8,0.16
-"('Growth_High', 'Tenure_Short')",2,8,0.16
-"('Growth_Low', 'PricePaid_High')",2,8,0.16
-"('Growth_Low', 'Value_High')",2,8,0.16
-"('PricePaid_Med', 'Value_High')",2,8,0.16
-"('Tenure_Med', 'Value_Med')",2,8,0.16
-"('Country_USA', 'Growth_Med', 'PricePaid_Low', 'Tenure_Long')",4,7,0.14
-"('Country_USA', 'PricePaid_Low', 'Tenure_Long', 'Value_Med')",4,7,0.14
-"('Country_USA', 'Growth_High', 'PricePaid_Med')",3,7,0.14
-"('Country_USA', 'Growth_Med', 'Value_Low')",3,7,0.14
-"('Country_USA', 'Tenure_Med', 'Value_Med')",3,7,0.14
-"('Growth_High', 'Value_Low')",2,7,0.14
-"('Growth_Low', 'Tenure_Med')",2,7,0.14
-"('Country_USA', 'Growth_Med', 'League_NFL', 'PricePaid_Low', 'Sport_American Football', 'Tenure_Long')",6,6,0.12
-"('Country_USA', 'Growth_Med', 'League_NFL', 'Sport_American Football', 'Value_Low')",5,6,0.12
-"('Country_USA', 'League_NFL', 'Sport_American Football', 'Tenure_Short')",4,6,0.12
-"('Country_USA', 'League_NFL', 'Sport_American Football', 'Value_High')",4,6,0.12
-"('Country_USA', 'Growth_High', 'Value_Low')",3,6,0.12
-"('Country_USA', 'Growth_Low', 'PricePaid_High')",3,6,0.12
-"('Country_USA', 'Growth_Low', 'PricePaid_Low')",3,6,0.12
-"('Country_USA', 'Growth_Low', 'Value_Med')",3,6,0.12
-"('Country_USA', 'Growth_Med', 'Value_Med')",3,6,0.12
-"('Country_USA', 'League_MLB', 'Sport_Baseball')",3,6,0.12
-"('PricePaid_Med', 'Tenure_Med', 'Value_Med')",3,6,0.12
-"('Growth_High', 'Value_High')",2,6,0.12
-"('PricePaid_Med', 'Sport_Soccer')",2,6,0.12
-"('Sport_Soccer', 'Value_High')",2,6,0.12
-"('Tenure_Med', 'Value_High')",2,6,0.12
-"('Tenure_Short', 'Value_High')",2,6,0.12
-"('Country_USA', 'League_NFL', 'PricePaid_Low', 'Sport_American Football', 'Tenure_Long', 'Value_Med')",6,5,0.1
-"('Country_USA', 'Growth_Low', 'League_NFL', 'Sport_American Football', 'Tenure_Med')",5,5,0.1
-"('Country_USA', 'League_NFL', 'PricePaid_High', 'Sport_American Football', 'Tenure_Short')",5,5,0.1
-"('Country_USA', 'League_NFL', 'Sport_American Football', 'Tenure_Med', 'Value_Med')",5,5,0.1
-"('Country_USA', 'League_NFL', 'Sport_American Football', 'Tenure_Short', 'Value_Low')",5,5,0.1
-"('Country_USA', 'Growth_High', 'League_NBA', 'Sport_Basketball')",4,5,0.1
-"('Country_USA', 'Growth_Low', 'PricePaid_Low', 'Tenure_Long')",4,5,0.1
-"('Country_USA', 'Growth_Med', 'PricePaid_High', 'Tenure_Short')",4,5,0.1
-"('Country_USA', 'League_NBA', 'PricePaid_Med', 'Sport_Basketball')",4,5,0.1
-"('Country_USA', 'League_NFL', 'PricePaid_Med', 'Sport_American Football')",4,5,0.1
-"('Country_USA', 'PricePaid_Med', 'Tenure_Med', 'Value_Med')",4,5,0.1
-"('Country_UK', 'League_Premier League', 'Sport_Soccer')",3,5,0.1
-"('Country_USA', 'Growth_High', 'Tenure_Short')",3,5,0.1
-"('Country_USA', 'Growth_Low', 'Value_High')",3,5,0.1
-"('Country_USA', 'PricePaid_Low', 'Value_High')",3,5,0.1
-"('Country_USA', 'Tenure_Long', 'Value_High')",3,5,0.1
-"('Growth_High', 'PricePaid_Med', 'Tenure_Med')",3,5,0.1
-"('Growth_High', 'PricePaid_Med', 'Value_High')",3,5,0.1
-"('Growth_Low', 'PricePaid_High', 'Tenure_Short')",3,5,0.1
-"('PricePaid_Med', 'Sport_Soccer', 'Value_High')",3,5,0.1
-"('PricePaid_Low', 'Value_Low')",2,5,0.1
-"('Sport_Soccer', 'Tenure_Short')",2,5,0.1
+CFI_Itemset,Length,Support_Count,Support
+Country_USA,1,41,0.82
+Country_USA; League_NFL; Sport_American Football,3,26,0.52
+Tenure_Short,1,18,0.36
+Growth_High,1,17,0.34
+Growth_Low,1,17,0.34
+PricePaid_Low,1,17,0.34
+PricePaid_Med,1,17,0.34
+Value_High,1,17,0.34
+Value_Low,1,17,0.34
+Country_USA; PricePaid_Low,2,16,0.32
+Country_USA; Tenure_Long,2,16,0.32
+Growth_Med,1,16,0.32
+PricePaid_High,1,16,0.32
+Tenure_Med,1,16,0.32
+Value_Med,1,16,0.32
+Country_USA; PricePaid_Low; Tenure_Long,3,15,0.3
+Country_USA; Growth_Med,2,15,0.3
+Country_USA; Value_Low,2,15,0.3
+Country_USA; Value_Med,2,15,0.3
+Country_USA; PricePaid_High,2,14,0.28
+Country_USA; League_NFL; PricePaid_Low; Sport_American Football,4,13,0.26
+Country_USA; Growth_High,2,13,0.26
+Country_USA; Growth_Low,2,13,0.26
+Country_USA; Tenure_Short,2,13,0.26
+PricePaid_High; Tenure_Short,2,13,0.26
+Country_USA; League_NFL; PricePaid_Low; Sport_American Football; Tenure_Long,5,12,0.24
+Country_USA; Tenure_Med,2,12,0.24
+PricePaid_Med; Tenure_Med,2,12,0.24
+Country_USA; PricePaid_High; Tenure_Short,3,11,0.22
+Country_USA; PricePaid_Med,2,11,0.22
+Country_USA; Value_High,2,11,0.22
+Tenure_Short; Value_Low,2,11,0.22
+Country_USA; Growth_Med; League_NFL; Sport_American Football,4,10,0.2
+Country_USA; League_NFL; Sport_American Football; Value_Low,4,10,0.2
+Country_USA; League_NFL; Sport_American Football; Value_Med,4,10,0.2
+Growth_High; PricePaid_Med,2,10,0.2
+Country_USA; League_NBA; Sport_Basketball,3,9,0.18
+Country_USA; Tenure_Short; Value_Low,3,9,0.18
+PricePaid_High; Tenure_Short; Value_Low,3,9,0.18
+Sport_Soccer,1,9,0.18
+Country_USA; Growth_High; League_NFL; Sport_American Football,4,8,0.16
+Country_USA; Growth_Low; League_NFL; Sport_American Football,4,8,0.16
+Country_USA; League_NFL; PricePaid_High; Sport_American Football,4,8,0.16
+Country_USA; League_NFL; Sport_American Football; Tenure_Med,4,8,0.16
+Country_USA; PricePaid_High; Tenure_Short; Value_Low,4,8,0.16
+Country_USA; PricePaid_Med; Tenure_Med,3,8,0.16
+Growth_High; Tenure_Short,2,8,0.16
+Growth_Low; PricePaid_High,2,8,0.16
+Growth_Low; Value_High,2,8,0.16
+PricePaid_Med; Value_High,2,8,0.16
+Tenure_Med; Value_Med,2,8,0.16
+Country_USA; Growth_Med; PricePaid_Low; Tenure_Long,4,7,0.14
+Country_USA; PricePaid_Low; Tenure_Long; Value_Med,4,7,0.14
+Country_USA; Growth_High; PricePaid_Med,3,7,0.14
+Country_USA; Growth_Med; Value_Low,3,7,0.14
+Country_USA; Tenure_Med; Value_Med,3,7,0.14
+Growth_High; Value_Low,2,7,0.14
+Growth_Low; Tenure_Med,2,7,0.14
+Country_USA; Growth_Med; League_NFL; PricePaid_Low; Sport_American Football; Tenure_Long,6,6,0.12
+Country_USA; Growth_Med; League_NFL; Sport_American Football; Value_Low,5,6,0.12
+Country_USA; League_NFL; Sport_American Football; Tenure_Short,4,6,0.12
+Country_USA; League_NFL; Sport_American Football; Value_High,4,6,0.12
+Country_USA; Growth_High; Value_Low,3,6,0.12
+Country_USA; Growth_Low; PricePaid_High,3,6,0.12
+Country_USA; Growth_Low; PricePaid_Low,3,6,0.12
+Country_USA; Growth_Low; Value_Med,3,6,0.12
+Country_USA; Growth_Med; Value_Med,3,6,0.12
+Country_USA; League_MLB; Sport_Baseball,3,6,0.12
+PricePaid_Med; Tenure_Med; Value_Med,3,6,0.12
+Growth_High; Value_High,2,6,0.12
+PricePaid_Med; Sport_Soccer,2,6,0.12
+Sport_Soccer; Value_High,2,6,0.12
+Tenure_Med; Value_High,2,6,0.12
+Tenure_Short; Value_High,2,6,0.12
+Country_USA; League_NFL; PricePaid_Low; Sport_American Football; Tenure_Long; Value_Med,6,5,0.1
+Country_USA; Growth_Low; League_NFL; Sport_American Football; Tenure_Med,5,5,0.1
+Country_USA; League_NFL; PricePaid_High; Sport_American Football; Tenure_Short,5,5,0.1
+Country_USA; League_NFL; Sport_American Football; Tenure_Med; Value_Med,5,5,0.1
+Country_USA; League_NFL; Sport_American Football; Tenure_Short; Value_Low,5,5,0.1
+Country_USA; Growth_High; League_NBA; Sport_Basketball,4,5,0.1
+Country_USA; Growth_Low; PricePaid_Low; Tenure_Long,4,5,0.1
+Country_USA; Growth_Med; PricePaid_High; Tenure_Short,4,5,0.1
+Country_USA; League_NBA; PricePaid_Med; Sport_Basketball,4,5,0.1
+Country_USA; League_NFL; PricePaid_Med; Sport_American Football,4,5,0.1
+Country_USA; PricePaid_Med; Tenure_Med; Value_Med,4,5,0.1
+Country_UK; League_Premier League; Sport_Soccer,3,5,0.1
+Country_USA; Growth_High; Tenure_Short,3,5,0.1
+Country_USA; Growth_Low; Value_High,3,5,0.1
+Country_USA; PricePaid_Low; Value_High,3,5,0.1
+Country_USA; Tenure_Long; Value_High,3,5,0.1
+Growth_High; PricePaid_Med; Tenure_Med,3,5,0.1
+Growth_High; PricePaid_Med; Value_High,3,5,0.1
+Growth_Low; PricePaid_High; Tenure_Short,3,5,0.1
+PricePaid_Med; Sport_Soccer; Value_High,3,5,0.1
+PricePaid_Low; Value_Low,2,5,0.1
+Sport_Soccer; Tenure_Short,2,5,0.1

@@ -9,7 +9,7 @@
         "title": "Team Valuation by Sport Category",
         "file": "plot02_box_value_sport.png",
         "type": "Box Plot with Stripplot",
-        "inference": "NFL (American Football) maintains the highest median valuation and remarkable consistency due to revenue parity and collective media agreements. In contrast, Soccer features a wide interquartile range with elite European clubs competing at the $4B+ apex."
+        "inference": "European Soccer maintains the highest median valuation (.10B) and mean valuation (.84B) due to exclusive global brand equity, while the NFL maintains the largest market share (52% of top 50, 26 teams) and a highly consistent valuation floor (median .07B, IQR .665B) anchored by collective media agreements and strict salary cap parity. Basketball exhibits the widest valuation dispersion (IQR .95B) between marquee big-market teams (.6B-.0B) and small-market franchises."
     },
     "plot03_bar_top10": {
         "title": "Top 10 Most Valuable Sports Franchises Worldwide",
@@ -75,18 +75,18 @@
         "title": "Naive Bayes Valuation Tier Confusion Matrix",
         "file": "plot13_confusion_matrix_nb.png",
         "type": "Confusion Matrix Heatmap",
-        "inference": "Naive Bayes achieves balanced classification on the test set across High, Med, and Low tiers using non-collinear predictors (League, Growth_Tier, Price_Tier, Tenure_Tier). Errors are restricted strictly to adjacent boundary tiers, confirming robust probabilistic calibration without collinear bias."
+        "inference": "Under strict leak-free train/test evaluation (discretization and one-hot encoding fitted strictly on the 80% train split), Naive Bayes achieves 50.0% test accuracy and 0.5000 Macro F1 across High, Med, and Low tiers. Errors are confined to adjacent boundary classes, verifying sound probabilistic calibration."
     },
     "plot14_agnes_dendrogram": {
         "title": "AGNES Hierarchical Clustering Dendrogram (Ward Linkage)",
         "file": "plot14_agnes_dendrogram.png",
         "type": "Hierarchical Dendrogram with Cut Line",
-        "inference": "The dendrogram evaluated without collinear year duplication exhibits strong cophenetic correlation (0.7351) and silhouette score (0.3764), partitioning franchises into 3 macro-clusters: Recent High-Capital Takeovers (7 teams), Hyper-Growth Outliers (4 teams), and Historic Blue-Chip Franchises (39 teams)."
+        "inference": "With exact collinear tenure duplication pruned (r=-1.0 between Year_Purchased_Clean and Years_Held), AGNES clustering with Ward's linkage exhibits high cophenetic tree fidelity (0.7351) and validates k=3 as optimal (silhouette 0.3764), segregating Recent High-Capital Takeovers (7 teams), Hyper-Growth Outliers (4 teams), and Historic Blue-Chip Franchises (39 teams)."
     },
     "plot15_pyspark_speedup": {
         "title": "Distributed Scaling Speedup and Execution Runtime Benchmark",
         "file": "plot15_pyspark_speedup.png",
         "type": "Dual-Panel Scaling & Speedup Diagnostic",
-        "inference": "Empirical verification of distributed computing crossover dynamics: At 1x (N=50) and 10x (N=500), single-node Scikit-Learn outperforms distributed engines (speedup 0.05x - 0.25x) due to master-driver coordination, data partitioning, and IPC socket serialization overhead. However, as data scales to 100x (N=5,000) and 1000x (N=50,000), computational complexity amortizes coordination latency, crossing the parity threshold (1.0x) and achieving substantial parallel speedup across 16 executor cores."
+        "inference": "Empirical verification of distributed computing crossover dynamics: At 1x (N=50) and 10x (N=500), single-node Scikit-Learn outperforms PySpark (speedup 0.00x - 0.27x) due to JVM context initialization, Catalyst query planning, and RDD partition serialization overhead. However, between N=500 and N=5,000 (~1,800 records), computational workload crosses the parity threshold (1.0x). At 100x (N=5,000), PySpark achieves a 1.63x speedup, and at 1000x (N=50,000), it achieves a massive 5.20x speedup (13.82s vs 71.85s) by executing FP-Growth and Gaussian Naive Bayes across multi-core workers."
     }
 }

@@ -1,4 +1,4 @@
-AGNES_Cluster,Franchise Count,Value_USD_B,Five_Year_Change_Pct,Price_Paid_USD_M,Years_Held
-1,7,2.95,48.86,2214.29,6.0
-2,4,3.82,173.75,444.0,10.75
-3,39,3.47,56.95,333.75,33.72
+AGNES_Cluster,Franchise_Count,Mean_Value_USD_B,Std_Value_USD_B,Mean_Five_Year_Change_Pct,Std_Five_Year_Change_Pct,Mean_Price_Paid_USD_M,Std_Price_Paid_USD_M,Mean_Years_Held,Std_Years_Held,Archetype,Representative_Teams
+1,7,2.9528571428571433,0.6694951900677175,48.857142857142854,14.205967894146594,2214.285714285714,543.6560537342565,6.0,5.228129047119374,"Recent High-Capital Takeovers (Short Tenure ~6 yrs, High Purchase Price ~$2.2B, Private Equity/Billionaire Ownership)","Manchester United, Los Angeles Dodgers, Los Angeles Clippers"
+2,4,3.825,0.9358596760910974,173.75,25.184320518926057,444.0,266.4782667811142,10.75,0.5,"Hyper-Growth Outliers & Modern Powerhouses (10.8 yrs tenure, 173.8% 5-Yr Growth, Global Media Reach)","Golden State Warriors, Liverpool, Los Angeles Rams"
+3,39,3.471282051282051,0.8375628161428577,56.94871794871795,19.96305629742458,333.7540564102564,320.1785713263359,33.717948717948715,24.912424207451945,"Historic Blue-Chip Franchises (Long Tenure ~33.7 yrs, Historic Low Acquisition Cost ~$334M, Massive Compounded Value)","Dallas Cowboys, New York Yankees, New York Knicks"

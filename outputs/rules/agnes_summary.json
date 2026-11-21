@@ -1,9 +1,35 @@
 {
     "linkage_method": "ward",
+    "distance_metric": "euclidean",
     "cophenetic_correlation": 0.7351,
+    "cophenetic_correlation_by_linkage": {
+        "ward": 0.7351,
+        "average": 0.7762,
+        "complete": 0.7344,
+        "single": 0.7342
+    },
     "num_clusters_k": 3,
     "silhouette_score": 0.3764,
+    "silhouette_scores_by_k": {
+        "2": 0.3331,
+        "3": 0.3764,
+        "4": 0.3633,
+        "5": 0.4214,
+        "6": 0.3619
+    },
     "cut_height_threshold": 8.42,
+    "collinear_pruning": {
+        "pruned_feature": "Year_Purchased_Clean",
+        "correlated_with": "Years_Held",
+        "pearson_r": -1.0,
+        "rationale": "Year_Purchased_Clean is mathematically collinear (r=-1.0) with Years_Held; pruning prevents artificial 2x distortion of the ownership tenure dimension in Euclidean space."
+    },
+    "optimal_k_justification": "k=3 achieves the optimal macro-cluster cohesion (silhouette=0.3764) while yielding 3 clear, strategically distinct franchise investment archetypes. Although k=5 yields a silhouette of 0.4214, it fragments the dataset into micro-clusters (sizes 4, 4), destroying macroeconomic interpretability.",
+    "cluster_archetypes": {
+        "1": "Recent High-Capital Takeovers (Short Tenure ~6 yrs, High Purchase Price ~$2.2B, Private Equity/Billionaire Ownership)",
+        "2": "Hyper-Growth Outliers & Modern Powerhouses (10.8 yrs tenure, 173.8% 5-Yr Growth, Global Media Reach)",
+        "3": "Historic Blue-Chip Franchises (Long Tenure ~33.7 yrs, Historic Low Acquisition Cost ~$334M, Massive Compounded Value)"
+    },
     "cluster_profiles": {
         "Franchise_Count": {
             "1": 7,

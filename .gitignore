@@ -19,6 +19,8 @@ ENV/
 Thumbs.db
 desktop.ini
 
-# Microsoft Office lock files
+# Backups and temporary audit folders
+backup_pre_audit/
+scratch/
 ~$*
 

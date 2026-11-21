@@ -35,5 +35,9 @@
     }
   ],
   "crossover_point": "Between 500 and 5,000 records (~1,800 records)",
-  "max_speedup": "5.20x at 50,000 records"
+  "max_speedup": "5.20x at 50,000 records",
+  "crossover_analysis": {
+    "jvm_driver_overhead": "On small dataset scales (1x N=50 and 10x N=500), single-node execution is faster because distributed engines (e.g. PySpark driver / partitioner) incur fixed initialization, serialization (SerDe), IPC thread management, and partition dispatch costs (~5.4s to 25.4s with cold JVM). This overhead exceeds total in-memory computation time for small batches, producing speedup < 1.0x.",
+    "crossover_point_dynamics": "As data size scales from 10x (N=500) to 100x (N=5,000) and 1000x (N=50,000), computational complexity scales super-linearly with N while distributed coordination overhead remains constant. The crossover point occurs between N=500 and N=5,000 (~1,800 records). At 1000x (N=50,000), distributed partitioning across multi-core executor threads eliminates sequential bottlenecks, yielding a massive 5.20x speedup."
+  }
 }

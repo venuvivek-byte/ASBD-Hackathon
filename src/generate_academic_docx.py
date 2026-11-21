@@ -396,10 +396,7 @@ def main():
          "substantially above the median ($3.20B). This gap confirms that franchise values follow a power-law dynamic rather than a standard Gaussian bell curve."),
         
         ("plot02_box_value_sport.png", "Figure 2: Valuation Box Plot and Individual Stripplot by Sport Discipline", "plot02_box_value_sport",
-         "American Football (NFL) maintains the highest median valuation and the tightest interquartile dispersion of any sport discipline. "
-         "This structural floor is a direct consequence of the NFL's collective bargaining agreement, hard salary cap, and equal revenue sharing "
-         "from national broadcasting agreements. Conversely, European Soccer displays high variance and wide dispersion: premier clubs "
-         "(Barcelona, Real Madrid, Bayern Munich) compete above $4.2B, but the discipline lacks the high median valuation floor observed across the NFL."),
+         "European Soccer maintains the highest median valuation (.10B) and mean valuation (.84B) due to exclusive global brand reach, while American Football (NFL) maintains the largest market share (52% of top 50, 26 teams) and a highly uniform valuation floor (median .07B, IQR .665B) anchored by collective bargaining and equal revenue sharing. Basketball displays the widest dispersion (IQR .95B) between premier big-market brands (.6B-.0B) and mid-market franchises."),
         
         ("plot03_bar_top10.png", "Figure 3: Top 10 Most Valuable Sports Franchises Worldwide", "plot03_bar_top10",
          "The global top 10 hierarchy is led by the Dallas Cowboys ($5.70B), followed by the New York Yankees ($5.25B) and New York Knicks ($5.00B). "
@@ -794,17 +791,27 @@ def main():
     out_docx_spark = os.path.join(out_dir, "ASBD_Sports_Analytics_Academic_Report_with_PySpark.docx")
     
     # Save the PySpark version
-    doc.save(out_docx_spark)
-    print(f"\n[SUCCESS] Academic Word Document generated successfully!")
-    print(f"Location: {out_docx_spark} ({os.path.getsize(out_docx_spark):,} bytes)")
+    saved_paths = []
+    try:
+        doc.save(out_docx_spark)
+        print(f"\n[SUCCESS] Academic Word Document generated successfully!")
+        print(f"Location: {out_docx_spark} ({os.path.getsize(out_docx_spark):,} bytes)")
+        saved_paths.append(out_docx_spark)
+    except PermissionError:
+        print(f"[NOTE] '{out_docx_spark}' is currently open in Microsoft Word or locked by another process.")
+        fallback_spark = os.path.join(out_dir, "ASBD_Sports_Analytics_Academic_Report_with_PySpark_Audited.docx")
+        doc.save(fallback_spark)
+        print(f"[SUCCESS] Saved audited version to: {fallback_spark} ({os.path.getsize(fallback_spark):,} bytes)")
+        saved_paths.append(fallback_spark)
 
     # Attempt saving to primary name if not locked by MS Word
     try:
         doc.save(out_docx_main)
         print(f"[SUCCESS] Updated primary document: {out_docx_main} ({os.path.getsize(out_docx_main):,} bytes)")
+        saved_paths.append(out_docx_main)
     except PermissionError:
         print(f"[NOTE] '{out_docx_main}' is currently open in Microsoft Word.")
-        print(f"       You can view and edit the updated report in: '{out_docx_spark}'.")
+        print(f"       You can view and edit the updated report in: {saved_paths[0]}.")
         print(f"       Once you close Word, re-running this script will update the primary file as well.")
 
 if __name__ == "__main__":

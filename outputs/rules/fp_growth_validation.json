@@ -1,0 +1,173 @@
+{
+    "benchmark_engine": "mlxtend 0.23.4",
+    "native_engine": "Native FP-Tree & Association Rule Miner (Han et al. 2000)",
+    "dataset": "data/transactions.csv",
+    "total_transactions": 50,
+    "parameters": {
+        "min_support": 0.1,
+        "min_support_count": 5,
+        "min_confidence": 0.6
+    },
+    "itemsets_validation": {
+        "mlxtend_count": 284,
+        "native_count": 284,
+        "exact_itemset_equality": true,
+        "exact_support_count_equality": true,
+        "max_absolute_support_difference": 0.0
+    },
+    "rules_validation": {
+        "mlxtend_count": 836,
+        "native_count": 836,
+        "exact_rule_equality": true,
+        "max_metric_differences": {
+            "support": 0.0,
+            "confidence": 0.0,
+            "lift": 0.0,
+            "leverage": 0.0
+        }
+    },
+    "redundancy_pruning": {
+        "total_rules": 836,
+        "redundant_rules_pruned": 518,
+        "non_redundant_rules": 318,
+        "compression_percentage": "61.96%"
+    },
+    "top_10_rules_by_lift": [
+        {
+            "rank": 1,
+            "antecedents": [
+                "League_Premier League"
+            ],
+            "consequents": [
+                "Country_UK",
+                "Sport_Soccer"
+            ],
+            "support": 0.1,
+            "confidence": 1.0,
+            "lift": 10.0
+        },
+        {
+            "rank": 2,
+            "antecedents": [
+                "Country_UK"
+            ],
+            "consequents": [
+                "League_Premier League",
+                "Sport_Soccer"
+            ],
+            "support": 0.1,
+            "confidence": 1.0,
+            "lift": 10.0
+        },
+        {
+            "rank": 3,
+            "antecedents": [
+                "League_Premier League",
+                "Sport_Soccer"
+            ],
+            "consequents": [
+                "Country_UK"
+            ],
+            "support": 0.1,
+            "confidence": 1.0,
+            "lift": 10.0
+        },
+        {
+            "rank": 4,
+            "antecedents": [
+                "Country_UK",
+                "Sport_Soccer"
+            ],
+            "consequents": [
+                "League_Premier League"
+            ],
+            "support": 0.1,
+            "confidence": 1.0,
+            "lift": 10.0
+        },
+        {
+            "rank": 5,
+            "antecedents": [
+                "League_Premier League"
+            ],
+            "consequents": [
+                "Country_UK"
+            ],
+            "support": 0.1,
+            "confidence": 1.0,
+            "lift": 10.0
+        },
+        {
+            "rank": 6,
+            "antecedents": [
+                "Country_UK"
+            ],
+            "consequents": [
+                "League_Premier League"
+            ],
+            "support": 0.1,
+            "confidence": 1.0,
+            "lift": 10.0
+        },
+        {
+            "rank": 7,
+            "antecedents": [
+                "League_MLB"
+            ],
+            "consequents": [
+                "Country_USA",
+                "Sport_Baseball"
+            ],
+            "support": 0.12,
+            "confidence": 1.0,
+            "lift": 8.3333
+        },
+        {
+            "rank": 8,
+            "antecedents": [
+                "Sport_Baseball"
+            ],
+            "consequents": [
+                "Country_USA",
+                "League_MLB"
+            ],
+            "support": 0.12,
+            "confidence": 1.0,
+            "lift": 8.3333
+        },
+        {
+            "rank": 9,
+            "antecedents": [
+                "Country_USA",
+                "League_MLB"
+            ],
+            "consequents": [
+                "Sport_Baseball"
+            ],
+            "support": 0.12,
+            "confidence": 1.0,
+            "lift": 8.3333
+        },
+        {
+            "rank": 10,
+            "antecedents": [
+                "Country_USA",
+                "Sport_Baseball"
+            ],
+            "consequents": [
+                "League_MLB"
+            ],
+            "support": 0.12,
+            "confidence": 1.0,
+            "lift": 8.3333
+        }
+    ],
+    "algorithmic_audit": {
+        "fp_tree_node_structure": "VERIFIED: FPNode tracks item, count, parent, children, next_homonym.",
+        "header_table_construction": "VERIFIED: Descending global frequency sorting with secondary string sort.",
+        "transaction_insertion": "VERIFIED: Prefix sharing and count aggregation with O(1) header linking.",
+        "conditional_pattern_base": "VERIFIED: Bottom-up header table traversal and prefix path extraction via parent pointers.",
+        "recursive_mining": "VERIFIED: Exact match with mlxtend benchmark across all 284 itemsets and 836 rules."
+    },
+    "status": "PASSED"
+}

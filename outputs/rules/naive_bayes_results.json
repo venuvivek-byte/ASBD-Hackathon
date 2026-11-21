@@ -1,5 +1,6 @@
 {
-    "model": "Categorical Naive Bayes",
+    "model": "Bernoulli Naive Bayes (Leak-Free)",
+    "target": "Valuation_Tier (High, Med, Low)",
     "random_state": 42,
     "train_size": 40,
     "test_size": 10,
@@ -8,15 +9,52 @@
         "Low",
         "Med"
     ],
-    "accuracy": 0.4,
-    "precision_macro": 0.3,
-    "recall_macro": 0.4444,
-    "f1_macro": 0.3571,
-    "f1_weighted": 0.3214,
+    "train_class_distribution": {
+        "Low": 14,
+        "High": 13,
+        "Med": 13
+    },
+    "test_class_distribution": {
+        "High": 4,
+        "Low": 3,
+        "Med": 3
+    },
+    "data_leakage_audit": {
+        "target_in_features": false,
+        "valuation_proxies_in_features": false,
+        "features_used": [
+            "League",
+            "Five_Year_Change_Pct",
+            "Price_Paid_USD_M",
+            "Years_Held"
+        ],
+        "discretization_fitted_on": "train_split_only",
+        "one_hot_encoding_fitted_on": "train_split_only",
+        "unseen_categories_handled": "OneHotEncoder(handle_unknown='ignore') gracefully maps unseen categories (e.g. Ligue 1) to zero vectors",
+        "train_quantile_cutoffs": {
+            "Five_Year_Change_Pct": {
+                "q_33": 48.0,
+                "q_67": 63.0
+            },
+            "Price_Paid_USD_M": {
+                "q_33": 280.0,
+                "q_67": 600.0
+            },
+            "Years_Held": {
+                "q_33": 16.0,
+                "q_67": 24.0
+            }
+        }
+    },
+    "accuracy": 0.5,
+    "precision_macro": 0.5222,
+    "recall_macro": 0.5278,
+    "f1_macro": 0.5,
+    "f1_weighted": 0.4833,
     "confusion_matrix": [
         [
-            0,
-            2,
+            1,
+            1,
             2
         ],
         [
@@ -33,6 +71,6 @@
     "key_if_then_rules": [
         "IF Price_Tier_Med AND Tenure_Tier_Med THEN Valuation is High (Class Prior: 0.33)",
         "IF Tenure_Tier_Low AND Price_Tier_High THEN Valuation is Low (Class Prior: 0.35)",
-        "IF League_NFL AND Tenure_Tier_Med THEN Valuation is Med (Class Prior: 0.33)"
+        "IF League_NFL AND Price_Tier_Low THEN Valuation is Med (Class Prior: 0.33)"
     ]
 }

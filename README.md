@@ -180,7 +180,7 @@ Navigate to the `notebooks/` directory and execute sequentially:
 ### Phase 3: Descriptive Analytics Portfolio (15 Figures)
 All 15 figures are generated in 300 DPI high resolution under `outputs/plots/` and indexed in `outputs/plots/inferences.json`:
 - **Plot 01:** Enterprise valuation histogram with KDE (strong right skewness; 60% clustered between $\$2.4\text{B} - \$3.5\text{B}$).
-- **Plot 02:** Valuation spread by sport (NFL exhibits highest median and lowest variance).
+- **Plot 02:** Valuation spread by sport (European Soccer exhibits highest median at .10B; NFL exhibits highest market share at 52% and uniform floor).
 - **Plot 03:** Top 10 global sports franchises (Dallas Cowboys leads at $\$5.70\text{B}$, Yankees second at $\$5.25\text{B}$).
 - **Plot 04:** Donut chart of franchise market share (NFL controls $52\%$, NBA $18\%$, Soccer $18\%$, MLB $12\%$).
 - **Plot 05:** Scatter plot of acquisition price vs. valuation (vintage owners achieved $>1,000\% - 50,000\%$ gains).

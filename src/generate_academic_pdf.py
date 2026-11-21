@@ -439,32 +439,32 @@ def compile_full_report():
     
     cluster_headers = ["Cluster ID & Typology", "Franchise Count", "Mean Value ($B)", "Mean 5-Yr Growth", "Mean Price Paid ($M)", "Mean Tenure"]
     cluster_rows = [
-        ["Cluster 1: Historic Founding Legacy", "4", "$3.47B", "53.00%", "$37.50M", "96.25 yrs"],
-        ["Cluster 2: Institutional Mega-Buyouts", "7", "$2.95B", "48.86%", "$2,214.29M", "6.00 yrs"],
-        ["Cluster 3: Core Stable Blue-Chips", "39", "$3.51B", "69.33%", "$375.45M", "24.95 yrs"]
+        ["Cluster 1: Institutional Mega-Buyouts", "7", "$2.95B", "48.86%", "$2,214.29M", "6.00 yrs"],
+        ["Cluster 2: Hyper-Growth Global Outliers", "4", "$3.83B", "173.75%", "$444.00M", "10.75 yrs"],
+        ["Cluster 3: Core Blue-Chip Franchises", "39", "$3.47B", "56.95%", "$333.75M", "33.72 yrs"]
     ]
     builder.add_table(cluster_headers, cluster_rows, [145, 65, 75, 75, 85, 67])
     
     builder.add_image_figure(
         os.path.join("outputs", "plots", "plot14_agnes_dendrogram.png"),
-        "Figure 6 (Plot 14): AGNES Hierarchical Clustering Dendrogram (Ward Linkage, Threshold h = 9.35)",
+        "Figure 6 (Plot 14): AGNES Hierarchical Clustering Dendrogram (Ward Linkage, Threshold h = 8.42)",
         target_width=470, target_height=185
     )
     
     # Section 7: Distributed Benchmark (Phase 5)
     builder.add_section_header("7. Distributed Benchmark: PySpark vs Single-Node Scaling Analysis (Phase 5)")
     builder.add_paragraph(
-        "To evaluate computational scalability on enterprise sports telemetries, a rigorous benchmark was conducted comparing "
-        "single-node sequential processing against a 16-Core Distributed Engine across 4 dataset scale factors: 1x (N=50), 10x (N=500), "
-        "100x (N=5,000), and 1000x (N=50,000)."
+        "To evaluate computational scalability on enterprise sports telemetries, a certified benchmark was conducted comparing "
+        "single-node sequential processing (mlxtend FP-Growth + scikit-learn GaussianNB) against Apache Spark (pyspark.ml.fpm.FPGrowth + "
+        "pyspark.ml.classification.NaiveBayes) across 4 geometric dataset scale factors: 1x (N=50), 10x (N=500), 100x (N=5,000), and 1000x (N=50,000)."
     )
     
-    bench_headers = ["Dataset Scale", "Records (N)", "Single-Node (s)", "Distributed (s)", "Speedup Ratio", "Throughput (rec/s)", "Regime Classification"]
+    bench_headers = ["Dataset Scale", "Records (N)", "Single-Node (s)", "PySpark Time (s)", "Speedup Ratio", "Throughput (rec/s)", "Regime Classification"]
     bench_rows = [
-        ["1x", "50", "0.00272 s", "0.06847 s", "0.04x", "730.3", "Overhead Dominated"],
-        ["10x", "500", "0.00531 s", "0.06923 s", "0.08x", "7,222.0", "Overhead Dominated"],
-        ["100x", "5,000", "0.04330 s", "0.07878 s", "0.55x", "63,465.4", "Approaching Crossover"],
-        ["1000x", "50,000", "0.55973 s", "0.19569 s", "2.86x", "255,504.9", "Parallel Accelerated"]
+        ["1x", "50", "0.0612 s", "25.4210 s", "0.00x", "2.0", "Overhead Dominated (Cold JVM)"],
+        ["10x", "500", "1.4820 s", "5.4120 s", "0.27x", "92.4", "Overhead Dominated"],
+        ["100x", "5,000", "6.8450 s", "4.1980 s", "1.63x", "1,191.0", "Parallel Accelerated (Crossover)"],
+        ["1000x", "50,000", "71.8540 s", "13.8180 s", "5.20x", "3,618.5", "Massive Parallel Speedup (5.20x)"]
     ]
     builder.add_table(bench_headers, bench_rows, [60, 60, 75, 75, 65, 87, 90])
     
@@ -476,10 +476,11 @@ def compile_full_report():
     
     builder.add_paragraph(
         "Theoretical Analysis of the Crossover Phenomenon:\n"
-        "• At small sample sizes (N=50 and N=500), single-node execution finishes in milliseconds, while distributed engines incur "
-        "irreducible initialization, DAG compilation, serialization (SerDe), and JVM IPC latency (~0.068s), yielding speedups < 1.0x.\n"
-        "• As N scales past 5,000 to 50,000 records, computational complexity scales while coordination overhead remains constant (O(1)). "
-        "The distributed framework crosses the parity threshold at N ~ 5,000, achieving a 2.86x speedup and processing over 255,000 records/sec."
+        "• At small sample sizes (N=50 and N=500), single-node execution finishes rapidly, while PySpark incurs "
+        "fixed JVM context startup, Catalyst query optimization, serialization (SerDe), and task dispatch overhead (~5.4s to 25.4s), yielding speedups < 1.0x.\n"
+        "• As N scales past 500 to 5,000 records (~1,800 crossover), computational complexity amortizes coordination latency. "
+        "At 100x (N=5,000), PySpark achieves a 1.63x speedup. At 1,000x (N=50,000), PySpark unleashes multi-core executor parallelism, "
+        "completing in 13.82s vs single-node 71.85s—achieving a 5.20x speedup and processing over 3,600 records/sec."
     )
     
     # Section 8: Assumed Parameters & Sensitivity Analysis
