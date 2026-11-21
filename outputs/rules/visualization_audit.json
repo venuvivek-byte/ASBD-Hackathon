@@ -281,7 +281,7 @@
             "data_variable_type": "Distributed Benchmark",
             "statistical_suitability": "Dual-panel log-log curve and speedup bar chart illustrate Amdahl crossover.",
             "axis_labeling_and_units": "Left: Records N vs Time (Seconds, Log Scale), Right: Scale Factor vs Speedup Ratio (x)",
-            "empirical_inference": "Empirical verification of distributed computing crossover dynamics: At 1x (N=50) and 10x (N=500), single-node Scikit-Learn outperforms PySpark (speedup 0.00x - 0.27x) due to JVM context initialization, Catalyst query planning, and RDD partition serialization overhead. However, between N=500 and N=5,000 (~1,800 records), computational workload crosses the parity threshold (1.0x). At 100x (N=5,000), PySpark achieves a 1.63x speedup, and at 1000x (N=50,000), it achieves a massive 5.20x speedup (13.82s vs 71.85s) by executing FP-Growth and Gaussian Naive Bayes across multi-core workers."
+            "empirical_inference": "Empirical verification of distributed computing crossover dynamics: At 1x (N=50 empirical records) and 10x (N=500 synthetic records), single-node Scikit-Learn outperforms PySpark (speedup 0.0024x - 0.27x; single-node 415x faster at 1x) due to JVM context initialization, Catalyst query planning, and RDD partition serialization overhead. However, within the observed crossover interval of [500, 5,000] records, computational workload crosses the parity threshold (1.0x). At 100x (N=5,000 synthetic records), PySpark achieves a 1.63x speedup, and at 1000x (N=50,000 synthetic records), it achieves a massive 5.20x speedup (13.82s vs 71.85s) by executing FP-Growth and Gaussian Naive Bayes across multi-core workers."
         }
     },
     "empirical_metrics_verification": {

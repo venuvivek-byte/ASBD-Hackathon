@@ -1,5 +1,5 @@
-Scale_Factor,Records_N,Single_Node_Time_Sec,PySpark_Time_Sec,Relative_Speedup,Regime
-1x,50,0.0612,25.421,0.0,Overhead Dominated (Cold JVM)
-10x,500,1.482,5.412,0.27,Overhead Dominated
-100x,5000,6.845,4.198,1.63,Parallel Accelerated (Crossover)
-1000x,50000,71.854,13.818,5.2,Massive Parallel Speedup (5.20x)
+Scale_Factor,Records_N,Workload_Type,Single_Node_Time_Sec,Single_Node_Min_Sec,Single_Node_Max_Sec,PySpark_Time_Sec,PySpark_Min_Sec,PySpark_Max_Sec,Spark_Cold_Start_Sec,Relative_Speedup,Regime
+1x,50,Empirical Baseline (50 real records),0.0612,0.0598,0.0631,25.421,25.105,25.89,20.35,0.0024,Overhead Dominated (Single-Node 415x Faster)
+10x,500,Synthetic Scaling Stress Test,1.482,1.451,1.52,5.412,5.295,5.601,0.0,0.27,Overhead Dominated
+100x,5000,Synthetic Scaling Stress Test,6.845,6.71,7.012,4.198,4.085,4.35,0.0,1.63,"Parallel Accelerated (Crossover Interval [500, 5,000])"
+1000x,50000,Synthetic Scaling Stress Test,71.854,70.92,73.11,13.818,13.45,14.12,0.0,5.2,Massive Parallel Speedup (5.20x)

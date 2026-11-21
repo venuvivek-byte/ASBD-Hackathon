@@ -118,21 +118,22 @@ display(Image(filename=plot15_path))
 """## 5.5 Empirical Findings & Theoretical Interpretation
 
 ### 1. Overhead Dominance Regime ($1\\times$ to $10\\times$, $N \\le 500$)
-- **Observation:** At $N=50$ and $N=500$, single-node sequential execution completes rapidly ($0.061\\text{s} - 1.482\\text{s}$), whereas PySpark requires $25.421\\text{s}$ (cold JVM) and $5.412\\text{s}$, producing speedup factors well below unity ($S = 0.00\\times$ and $0.27\\times$).
+- **Observation:** At $N=50$ (empirical baseline) and $N=500$ (synthetic stress test), single-node sequential execution completes rapidly ($0.061\\text{s} - 1.482\\text{s}$), whereas PySpark requires $25.421\\text{s}$ (cold JVM) and $5.412\\text{s}$, producing speedup factors well below unity ($S = 0.0024\\times$ [single-node 415x faster] and $0.27\\times$).
 - **Root Cause:** Distributed computing engines incur fixed base overhead consisting of:
   1. **JVM context initialization, Catalyst DAG compilation & task scheduling.**
   2. **Data serialization / deserialization (SerDe) and IPC network/socket transport.**
   3. **Executor thread pool context switching and partition slicing.**
 - When computational complexity of the batch is smaller than this fixed overhead, distributed systems exhibit negative speedup.
 
-### 2. The Empirical Crossover Point ($N \\approx 1,800$ records)
+### 2. The Observed Crossover Interval ($[500, 5,000]$ records)
 - Between $N=500$ and $N=5,000$, computational volume expands by an order of magnitude ($O(N \\cdot M^2)$).
 - Coordination overhead remains essentially constant ($O(1)$), allowing parallel worker partitions to absorb the load.
-- At $N=5,000$ ($100\\times$), PySpark achieves a **$1.63\\times$ speedup** ($4.198\\text{s}$ vs $6.845\\text{s}$), crossing the $S = 1.0\\times$ break-even horizon.
+- Within this **observed crossover interval of $[500, 5,000]$ records**, PySpark crosses the parity threshold ($1.0\\times$). At $N=5,000$ ($100\\times$), PySpark achieves a **$1.63\\times$ speedup** ($4.198\\text{s}$ vs $6.845\\text{s}$).
 
 ### 3. Parallel Acceleration Regime ($1000\\times$, $N = 50,000$)
-- At $N=50,000$, single-node sequential processing becomes severely bottlenecked ($71.854\\text{s}$), while PySpark partitioned execution finishes in $13.818\\text{s}$, achieving a **$5.20\\times$ parallel speedup** and handling over **$3,600\\text{ records/sec}$** in throughput.
+- At $50,000$ synthetic records, single-node sequential processing becomes severely bottlenecked ($71.854\\text{s}$), while PySpark partitioned execution finishes in $13.818\\text{s}$, achieving a **$5.20\\times$ parallel speedup** and handling over **$3,600\\text{ records/sec}$** in throughput.
 - This provides rigorous empirical confirmation of Amdahl's Law and justifies the transition to Apache Spark clusters for modern enterprise-scale sports intelligence.
+- **Methodological Note:** Replicated scaling workloads ($10\\times$, $100\\times$, $1,000\\times$) serve as synthetic computational stress tests with Gaussian noise and are distinct from the $1\\times$ empirical Forbes observations.
 """
         )
     ]

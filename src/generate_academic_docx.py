@@ -214,9 +214,11 @@ def main():
         "strongly predicts upper-tier valuations. Finally, AGNES Agglomerative Hierarchical Clustering (Ward linkage, Cophenetic r=0.7351, Silhouette s=0.3764 at k=3) "
         "partitioned the franchise landscape into three distinct institutional archetypes: Recent Mega-Takeovers ($2.21B average purchase), "
         "Hyper-Growth Outliers (173.8% 5-year growth), and Historic Blue-Chips ($3.47B valuation across 33.7 years of tenure). "
-        "Furthermore, an empirical horizontal scaling benchmark comparing single-node Python (Scikit-Learn/mlxtend) against a multi-core PySpark "
-        "distributed engine across 1x to 1,000x dataset replications validated Amdahl's Law, demonstrating an overhead-dominated regime at small scales "
-        "(N <= 500) and a substantial 5.20x parallel speedup at 50,000 records. "
+        "Furthermore, an empirical scaling benchmark evaluating local multi-core Spark execution (local[*], thread-level parallelism on a single JVM node, not a multi-machine distributed cluster) "
+        "across 1x (N=50 empirical records) to 1,000x (N=50,000 synthetic replicated records to assess multi-core throughput, not additional independent real-world teams) "
+        "validated Amdahl's Law. Cold JVM startup, Catalyst query planning, SerDe latency, and thread context switching overhead dominate small workloads "
+        "(S = 0.002x at 1x, where single-node was ~415x faster; S = 0.27x at 10x), before crossing the parity threshold strictly within the observed interval "
+        "between 500 and 5,000 records ([500, 5,000]) to achieve a 5.20x multi-core parallel speedup (13.82s vs 71.85s) at 50,000 synthetic records. "
         "All data transformations, algorithmic proofs, and empirical inferences are systematically detailed."
     )
     r_abs.font.size = Pt(10)
@@ -226,7 +228,7 @@ def main():
     p_kw.paragraph_format.space_after = Pt(20)
     r_kw_title = p_kw.add_run("Keywords: ")
     r_kw_title.bold = True
-    r_kw = p_kw.add_run("Sports Analytics, Knowledge Discovery in Databases, FP-Growth, CHARM Algorithm, Closed Itemsets, Naive Bayes, AGNES Hierarchical Clustering, PySpark Distributed Scaling, Amdahl's Law.")
+    r_kw = p_kw.add_run("Sports Analytics, Knowledge Discovery in Databases, FP-Growth, CHARM Algorithm, Closed Itemsets, Naive Bayes, AGNES Hierarchical Clustering, PySpark Multi-Core Scaling, Amdahl's Law.")
     r_kw.italic = True
     r_kw.font.size = Pt(9.5)
 
@@ -251,7 +253,7 @@ def main():
         "2. Holding Period Compounding: To what extent does ownership duration (tenure) amplify nominal valuation multiples versus contemporary market acquisitions?\n"
         "3. Cross-Disciplinary Association Patterns: What high-confidence attribute co-occurrences emerge across sport, league, holding duration, and growth rates?\n"
         "4. Institutional Clustering: Can sports franchises be objectively partitioned into distinct financial archetypes using agglomerative hierarchical clustering?\n"
-        "5. Distributed Scalability: At what dataset scale does a distributed compute engine (PySpark local[*]) overcome JVM and Catalyst optimizer coordination overhead to achieve superior computational throughput over optimized single-node engines?"
+        "5. Distributed Scalability: At what dataset scale does local multi-core Spark execution using thread-level parallelism on a single JVM node (local[*]) overcome JVM startup, Catalyst query planning, and thread coordination overhead to achieve superior computational throughput over optimized single-node engines?"
     )
 
     # -------------------------------------------------------------
@@ -671,20 +673,23 @@ def main():
     # -------------------------------------------------------------
     # SECTION 7: PySpark Distributed Benchmark & Scaling Analysis
     # -------------------------------------------------------------
-    add_heading_with_spacing(doc, "7. PySpark Distributed Benchmark & Horizontal Scaling Analysis", level=1)
+    add_heading_with_spacing(doc, "7. Local Multi-Core Spark Benchmark & Scaling Analysis", level=1)
     
     doc.add_paragraph(
         "A critical engineering requirement of modern data science is evaluating when distributed computing frameworks "
         "(such as Apache Spark) provide genuine performance advantages over optimized single-node engines (such as Scikit-Learn and mlxtend). "
-        "To investigate this scaling dynamic, a rigorous horizontal scaling benchmark was executed in multi-core distributed mode (local[*]) "
-        "with 4 GB driver memory allocation."
+        "To investigate this scaling dynamic, a rigorous computational benchmark was executed using Apache Spark in local[*] mode—"
+        "local multi-core Spark execution using thread-level parallelism on a single JVM node, NOT a multi-machine distributed cluster. "
+        "Unsupported claims of enterprise-scale horizontal scalability are explicitly avoided."
     )
     doc.add_paragraph(
         "Two core machine learning and data mining techniques were evaluated side-by-side:\n"
         "1. Distributed Frequent Pattern Mining: pyspark.ml.fpm.FPGrowth versus single-node mlxtend.frequent_patterns.fpgrowth.\n"
         "2. Distributed Probabilistic Classification: pyspark.ml.classification.NaiveBayes versus single-node sklearn.naive_bayes.GaussianNB.\n"
         "The analytical workload was systematically evaluated across four geometric replication scale factors: "
-        "1x baseline (N = 50 records), 10x (N = 500 records), 100x (N = 5,000 records), and 1,000x (N = 50,000 records)."
+        "1x baseline (N = 50 empirical records), 10x (N = 500 synthetic records), 100x (N = 5,000 synthetic records), and 1,000x (N = 50,000 synthetic records). "
+        "The 10x, 100x, and 1,000x workloads are synthetic replicated scaling experiments to evaluate multi-core computational throughput, "
+        "not additional independent real-world sports teams."
     )
 
     # PySpark Scaling Benchmark Table
@@ -695,10 +700,10 @@ def main():
         spark_table.cell(0, i).paragraphs[0].text = h
 
     spark_data = [
-        ("1x Baseline", "50 records", "0.06 seconds", "25.42 seconds", "0.00x", "Overhead Dominated (Cold JVM)"),
-        ("10x Replicate", "500 records", "1.48 seconds", "5.41 seconds", "0.27x", "Overhead Dominated"),
-        ("100x Replicate", "5,000 records", "6.85 seconds", "4.20 seconds", "1.63x", "Parallel Accelerated (Crossover)"),
-        ("1,000x Replicate", "50,000 records", "71.85 seconds", "13.82 seconds", "5.20x", "Massive Multi-Core Speedup (5.20x)")
+        ("1x Baseline", "50 empirical records", "0.0612 s", "25.4210 s", "0.002x", "Overhead Dominated (Cold JVM, ~415x Single-Node)"),
+        ("10x Replicate", "500 synthetic records", "1.4820 s", "5.4120 s", "0.27x", "Overhead Dominated"),
+        ("100x Replicate", "5,000 synthetic records", "6.8450 s", "4.1980 s", "1.63x", "Parallel Accelerated (Crossover)"),
+        ("1,000x Replicate", "50,000 synthetic records", "71.8540 s", "13.8180 s", "5.20x", "Massive Multi-Core Speedup (5.20x)")
     ]
     for row_idx, data in enumerate(spark_data, start=1):
         for col_idx, text in enumerate(data):
@@ -724,14 +729,14 @@ def main():
         doc,
         "Empirical Crossover Dynamics & Amdahl's Law Reflections:\n"
         "1. The Small Data Penalty (N <= 500): On small datasets, PySpark is significantly slower than single-node execution "
-        "(0.00x to 0.27x speedup). This overhead stems from JVM context initialization, RDD partitioning, Catalyst optimizer plan compilation, "
-        "and serialization/deserialization (SerDe) across thread pools. Single-node Python processes in-memory microsecond calculations with zero coordination cost.\n"
-        "2. The Crossover Horizon (N = 5,000): Between 500 and 5,000 records (empirically around 1,800 records), the scaling curves cross "
-        "the red Parity Threshold (1.0x). At 5,000 records, PySpark achieves a 1.63x speedup (4.20s vs. 6.85s).\n"
-        "3. High-Throughput Parallel Acceleration (N = 50,000): As the computational burden scales to 50,000 records, single-node execution "
-        "slows to 71.85 seconds. PySpark amortizes all fixed driver overhead and unleashes multi-core executor parallelism, completing in just "
-        "13.82 seconds—a massive 5.20x speedup handling tens of thousands of records per second.",
-        title="Theoretical Takeaway: Distributed Amdahl Crossover"
+        "(0.002x at 1x, where single-node was ~415x faster, and 0.27x at 10x). This overhead stems from cold JVM context startup, Catalyst optimizer plan compilation, "
+        "serialization/deserialization (SerDe) latency, and thread context switching across thread pools. Single-node Python processes in-memory calculations with zero coordination cost.\n"
+        "2. The Crossover Horizon (N in [500, 5,000]): Computational complexity scales super-linearly with N while Spark coordination overhead remains constant. "
+        "The empirical crossover point is strictly observed within the interval between 500 and 5,000 records ([500, 5,000]). At 5,000 records, PySpark achieves a 1.63x speedup (4.20s vs. 6.85s).\n"
+        "3. High-Throughput Parallel Acceleration (N = 50,000): As the computational burden scales to 50,000 synthetic records, single-node execution "
+        "slows to 71.85 seconds. PySpark amortizes fixed driver and JVM overhead across multi-core executor threads on the local JVM node, completing in just "
+        "13.82 seconds—a massive 5.20x speedup processing 3,618.5 records per second.",
+        title="Theoretical Takeaway: Multi-Core Thread Parallelism & Crossover"
     )
 
     doc.add_page_break()
@@ -757,7 +762,7 @@ def main():
         ("CHARM Mining", "min_support", "0.10 (10%)", "Identical support threshold to FP-Growth to enable direct comparative evaluation of closed itemset compression."),
         ("Naive Bayes Classifier", "test_size / split", "0.20 (80/20)", "Stratified split preserving class balance (4 High, 3 Med, 3 Low in test set of 10 teams)."),
         ("AGNES Clustering", "k / cut_height", "k=3 (h=8.42)", "Optimal silhouette score (0.3764) and cophenetic correlation (0.7351) identifying 3 natural market segments."),
-        ("PySpark Distributed Engine", "master / driver memory", "local[*] / 4 GB", "Multi-core local distributed cluster utilizing all logical CPU cores with 4 GB heap memory.")
+        ("PySpark Distributed Engine", "master / driver memory", "local[*] / 4 GB", "Local multi-core Spark execution on a single JVM node utilizing thread-level parallelism across all logical CPU cores with 4 GB heap memory.")
     ]
     for row_idx, data in enumerate(params_data, start=1):
         for col_idx, text in enumerate(data):
@@ -789,30 +794,30 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     out_docx_main = os.path.join(out_dir, "ASBD_Sports_Analytics_Academic_Report.docx")
     out_docx_spark = os.path.join(out_dir, "ASBD_Sports_Analytics_Academic_Report_with_PySpark.docx")
+    out_docx_audited = os.path.join(out_dir, "ASBD_Sports_Analytics_Academic_Report_with_PySpark_Audited.docx")
     
+    # Always save the audited version
+    try:
+        doc.save(out_docx_audited)
+        print(f"\n[SUCCESS] Audited Academic Word Document generated successfully!")
+        print(f"Location: {out_docx_audited} ({os.path.getsize(out_docx_audited):,} bytes)")
+    except Exception as e:
+        print(f"[WARNING] Could not save to {out_docx_audited}: {e}")
+
     # Save the PySpark version
-    saved_paths = []
     try:
         doc.save(out_docx_spark)
-        print(f"\n[SUCCESS] Academic Word Document generated successfully!")
+        print(f"[SUCCESS] Academic Word Document generated successfully!")
         print(f"Location: {out_docx_spark} ({os.path.getsize(out_docx_spark):,} bytes)")
-        saved_paths.append(out_docx_spark)
     except PermissionError:
         print(f"[NOTE] '{out_docx_spark}' is currently open in Microsoft Word or locked by another process.")
-        fallback_spark = os.path.join(out_dir, "ASBD_Sports_Analytics_Academic_Report_with_PySpark_Audited.docx")
-        doc.save(fallback_spark)
-        print(f"[SUCCESS] Saved audited version to: {fallback_spark} ({os.path.getsize(fallback_spark):,} bytes)")
-        saved_paths.append(fallback_spark)
 
     # Attempt saving to primary name if not locked by MS Word
     try:
         doc.save(out_docx_main)
         print(f"[SUCCESS] Updated primary document: {out_docx_main} ({os.path.getsize(out_docx_main):,} bytes)")
-        saved_paths.append(out_docx_main)
     except PermissionError:
         print(f"[NOTE] '{out_docx_main}' is currently open in Microsoft Word.")
-        print(f"       You can view and edit the updated report in: {saved_paths[0]}.")
-        print(f"       Once you close Word, re-running this script will update the primary file as well.")
 
 if __name__ == "__main__":
     main()

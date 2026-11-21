@@ -32,9 +32,9 @@ An end-to-end econometric, predictive modeling, closed frequent pattern mining, 
 This investigation integrates parametric and nonparametric statistical testing, transaction tokenization, association rule discovery, closed frequent itemset compression, probabilistic Bayesian classification, agglomerative hierarchical clustering, and distributed execution benchmarks on elite sports properties.
 
 ### Primary Breakthroughs:
-1. **Lossless Pattern Compression:** FP-Growth discovered 284 frequent itemsets; the custom CHARM algorithm pruned this down to 98 Closed Frequent Itemsets, achieving a **65.49% lossless compression ratio**.
-2. **Cluster Validation:** AGNES hierarchical clustering isolated 3 distinct economic tiers (Historic Founding Legacy, Institutional Mega-Buyouts, and Core Blue-Chips) with an exceptional **cophenetic correlation coefficient of 0.7777**.
-3. **Distributed Speedup & Crossover:** A dual-runner horizontal scaling benchmark across $1\times$ ($N=50$) to $1000\times$ ($N=50,000$) demonstrated the classic distributed computing crossover point. Irreducible JVM/driver coordination overhead dominates small batches ($S = 0.04\times$), before crossing the break-even parity threshold at $N \approx 5,000$ to achieve a **$2.86\times$ parallel speedup** and **$255,505\text{ records/sec}$ throughput**.
+1. **Lossless Pattern Compression:** FP-Growth discovered 284 frequent itemsets; the custom CHARM algorithm pruned this down to 96 Closed Frequent Itemsets, achieving a **66.20% lossless compression ratio**.
+2. **Cluster Validation:** AGNES hierarchical clustering isolated 3 distinct economic tiers (Recent High-Capital Takeovers, Hyper-Growth Outliers, and Historic Blue-Chips) with an exceptional **cophenetic correlation coefficient of 0.7351** (optimal $k=3$, $s=0.3764$, cut height $h=8.42$).
+3. **Local Multi-Core PySpark Speedup & Crossover:** An empirical scaling benchmark across $1\times$ ($N=50$ empirical records) to $1000\times$ ($N=50,000$ synthetic replicated records) using local multi-core Spark execution (`local[*]`, thread-level parallelism on a single JVM node) demonstrated the crossover dynamics. Cold JVM initialization, Catalyst query optimization, SerDe latency, and thread context switching overhead dominate small batches ($S = 0.002\times$ at $1\times$, noting single-node was $\sim 415\times$ faster; $S = 0.27\times$ at $10\times$), before crossing the break-even parity threshold within the $[500, 5,000]$ interval to achieve a **$5.20\times$ parallel speedup** ($13.82\text{s}$ vs $71.85\text{s}$) and throughput of **$3,618.5\text{ records/sec}$** at $N=50,000$. Note: Workloads at $10\times$, $100\times$, and $1,000\times$ are synthetic replicated scaling experiments to evaluate multi-core computational throughput, not additional independent real-world sports teams.
 4. **Academic Publication:** Formal 7-page academic publication PDF (`report/ASBD_Hackathon_Final_Report.pdf`) featuring embedded high-resolution figures, formal KaTeX formulations, and structured decision tables.
 
 ---
@@ -191,30 +191,34 @@ All 15 figures are generated in 300 DPI high resolution under `outputs/plots/` a
 - **Plot 10:** Q-Q plot and normality diagnostics (heavy right tail confirms violation of Gaussian distribution).
 - **Plot 11:** Stacked geographic distribution (US sports are 100% domestic; soccer spans UK, Spain, Germany, France).
 - **Plot 12:** Bubble chart of valuation vs. growth scaled by ownership tenure.
-- **Plot 13:** Naive Bayes test confusion matrix across High, Med, and Low tiers.
-- **Plot 14:** AGNES hierarchical dendrogram with cut-height threshold $h = 9.35$.
-- **Plot 15:** Distributed speedup and execution runtime scaling diagnostic across $1\times$ to $1000\times$ scales.
+- **Plot 13:** Naive Bayes valuation tier confusion matrix across High, Med, and Low tiers (50.0% test accuracy, 0.5000 Macro F1).
+- **Plot 14:** AGNES hierarchical dendrogram (Ward linkage, cophenetic $r=0.7351$, cut-height threshold $h = 8.42$, $k=3$).
+- **Plot 15:** Distributed speedup and execution runtime scaling diagnostic across $1\times$ to $1000\times$ scales, showing crossover interval in $[500, 5,000]$ records.
 
 ### Phase 4: Pattern Mining & Predictive Modeling
-- **FP-Growth:** Discovered 284 frequent itemsets and 1,212 association rules ($\text{min\_support}=0.10, \text{min\_confidence}=0.60$).
-- **CHARM CFI Algorithm:** Extracted 98 Closed Frequent Itemsets, achieving a **$65.49\%$ lossless compression ratio** ($1 - 98/284$).
-- **Naive Bayes Classification:** Evaluated on stratified hold-out test partition; achieved $40.0\%$ accuracy with errors restricted strictly to adjacent tiers. Decision rules extracted via class conditional probabilities.
-- **AGNES Hierarchical Clustering:** Ward's linkage achieved a **$0.7777$ cophenetic correlation coefficient**, cleanly partitioning the franchises into 3 macro-clusters:
-  1. *Historic Founding Legacy ($N=4$):* Mean tenure $96.25\text{ yrs}$, mean value $\$3.47\text{B}$.
-  2. *Institutional Mega-Buyouts ($N=7$):* Mean tenure $6.00\text{ yrs}$, mean price paid $\$2,214\text{M}$.
-  3. *Core Stable Blue-Chips ($N=39$):* Mean tenure $24.95\text{ yrs}$, mean value $\$3.51\text{B}$.
+- **FP-Growth:** Discovered 284 frequent itemsets and 836 association rules ($\text{min\_support}=0.10, \text{min\_confidence}=0.60$), with 318 minimal rules after redundancy pruning (61.96% compression).
+- **CHARM CFI Algorithm:** Extracted 96 Closed Frequent Itemsets, achieving a **$66.20\%$ lossless compression ratio** ($1 - 96/284$).
+- **Naive Bayes Classification:** Evaluated on stratified hold-out test partition with Laplace smoothing ($\alpha=1.0$); achieved $50.0\%$ test accuracy and $0.5000$ Macro F1 with errors restricted strictly to adjacent tiers. Decision rules extracted via class conditional probabilities.
+- **AGNES Hierarchical Clustering:** Ward's linkage achieved a **$0.7351$ cophenetic correlation coefficient**, cleanly partitioning the franchises into 3 macro-clusters at cut height $h=8.42$ ($s=0.3764$):
+  1. *Recent High-Capital Takeovers ($N=7$):* Mean price paid $\$2,214\text{M}$, mean tenure $6.00\text{ yrs}$.
+  2. *Hyper-Growth Outliers ($N=4$):* Mean 5-yr growth $173.8\%$, mean tenure $10.75\text{ yrs}$.
+  3. *Historic Blue-Chip Core ($N=39$):* Mean value $\$3.47\text{B}$, mean tenure $33.72\text{ yrs}$.
 
 ### Phase 5: Distributed Benchmark & Speedup Analysis
-Benchmarked on Intel64 16-Core workstation across 4 data scales:
+Evaluated in Google Colab using `local[*]` mode—**local multi-core Spark execution using thread-level parallelism on a single JVM node**, NOT a multi-machine distributed cluster. The benchmark evaluated native `pyspark.ml.fpm.FPGrowth` and `pyspark.ml.classification.NaiveBayes` against single-node Scikit-Learn/mlxtend:
 
-| Scale Factor | Records ($N$) | Single-Node (s) | Distributed (s) | Speedup Ratio ($S$) | Distributed Throughput | Computing Regime |
+| Scale Factor | Records ($N$) | Single-Node (s) | PySpark `local[*]` (s) | Speedup Ratio ($S$) | Distributed Throughput | Computing Regime |
 | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **1x** | 50 | 0.00272 s | 0.06847 s | **0.04x** | 730 rec/s | Overhead Dominated |
-| **10x** | 500 | 0.00531 s | 0.06923 s | **0.08x** | 7,222 rec/s | Overhead Dominated |
-| **100x** | 5,000 | 0.04330 s | 0.07878 s | **0.55x** | 63,465 rec/s | Approaching Crossover |
-| **1000x** | 50,000 | 0.55973 s | 0.19569 s | **2.86x** | **255,505 rec/s** | **Parallel Accelerated** |
+| **1x** | 50 | 0.0612 s | 25.4210 s | **0.002x** | 2.0 rec/s | Overhead Dominated (Cold JVM, ~415x Single-Node) |
+| **10x** | 500 | 1.4820 s | 5.4120 s | **0.27x** | 92.4 rec/s | Overhead Dominated |
+| **100x** | 5,000 | 6.8450 s | 4.1980 s | **1.63x** | 1,191.0 rec/s | Parallel Accelerated (Crossover) |
+| **1000x** | 50,000 | 71.8540 s | 13.8180 s | **5.20x** | **3,618.5 rec/s** | **Massive Parallel Speedup (5.20x)** |
 
-**Empirical Crossover Finding:** At small scales ($N \le 500$), distributed execution incurs fixed initialization, DAG scheduling, and SerDe latency ($\sim 0.068\text{s}$), making single-node execution faster. At large scales ($N \ge 5,000$), computational complexity amortizes coordination latency, crossing the parity horizon and unlocking massive parallel speedup.
+**Key Takeaways & Boundary Constraints:**
+1. **Local Multi-Core Architecture:** PySpark execution was conducted in `local[*]` mode utilizing thread-level parallelism on a single JVM node, not across a multi-node physical distributed cluster.
+2. **Small-Data Overhead Penalty ($N \le 500$):** At small scales, single-node execution significantly outperforms Spark ($0.002\times$ at $1\times$, noting single-node was $\sim 415\times$ faster; $0.27\times$ at $10\times$) due to fixed initialization, cold JVM startup, Catalyst optimizer query planning, SerDe latency, and thread context switching overhead (~5.4s to 25.4s).
+3. **Synthetic Scaling Limitations:** The original Forbes dataset comprises 50 empirical records. The $10\times$ (500), $100\times$ (5,000), and $1,000\times$ (50,000) workloads are synthetic replicated scaling experiments to evaluate multi-core computational throughput, not additional independent real-world sports teams.
+4. **Empirical Crossover Interval:** Computational complexity scales super-linearly with $N$ while coordination overhead remains constant. The crossover point is observed strictly within the **$[500, 5,000]$** records interval. At $100\times$ ($N=5,000$), PySpark achieves a $1.63\times$ speedup, and at $1,000\times$ ($N=50,000$), it achieves a $5.20\times$ speedup ($13.82\text{s}$ vs $71.85\text{s}$).
 
 ### Phase 6: Final Report & Submission Package
 - **Academic Publication Markdown:** `report/ASBD_Hackathon_Final_Report.md`
@@ -238,8 +242,8 @@ Benchmarked on Intel64 16-Core workstation across 4 data scales:
 To guarantee 100% end-to-end reproducibility:
 - [x] Deterministic seed (`random_state = 42`) set across all scripts and notebooks.
 - [x] Zero data leakage: Imputation medians and scaling parameters computed independently.
-- [x] Lossless pattern compression verified ($|\text{CFI}| = 98$ vs $|\text{FI}| = 284$, ratio $= 65.49\%$).
-- [x] Cophenetic correlation verified ($c = 0.7777$).
+- [x] Lossless pattern compression verified ($|\text{CFI}| = 96$ vs $|\text{FI}| = 284$, ratio $= 66.20\%$).
+- [x] Cophenetic correlation verified ($c = 0.7351$).
 - [x] All 15 figures verified in `outputs/plots/` and indexed in `inferences.json`.
 - [x] Master PDF verified in `report/ASBD_Hackathon_Final_Report.pdf` (755 KB, 7 pages).
 - [x] All 6 phase notebooks verified in `notebooks/`.
