@@ -1,0 +1,39 @@
+{
+  "engine": "Native Google Colab PySpark local[*]",
+  "benchmarks": [
+    {
+      "Scale_Factor": "1x",
+      "Records_N": 50,
+      "Single_Node_Time_Sec": 0.0612,
+      "PySpark_Time_Sec": 25.421,
+      "Relative_Speedup": 0.0,
+      "Regime": "Overhead Dominated (Cold JVM)"
+    },
+    {
+      "Scale_Factor": "10x",
+      "Records_N": 500,
+      "Single_Node_Time_Sec": 1.482,
+      "PySpark_Time_Sec": 5.412,
+      "Relative_Speedup": 0.27,
+      "Regime": "Overhead Dominated"
+    },
+    {
+      "Scale_Factor": "100x",
+      "Records_N": 5000,
+      "Single_Node_Time_Sec": 6.845,
+      "PySpark_Time_Sec": 4.198,
+      "Relative_Speedup": 1.63,
+      "Regime": "Parallel Accelerated (Crossover)"
+    },
+    {
+      "Scale_Factor": "1000x",
+      "Records_N": 50000,
+      "Single_Node_Time_Sec": 71.854,
+      "PySpark_Time_Sec": 13.818,
+      "Relative_Speedup": 5.2,
+      "Regime": "Massive Parallel Speedup (5.20x)"
+    }
+  ],
+  "crossover_point": "Between 500 and 5,000 records (~1,800 records)",
+  "max_speedup": "5.20x at 50,000 records"
+}

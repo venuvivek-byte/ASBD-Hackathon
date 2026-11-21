@@ -1,0 +1,5 @@
+Scale_Factor,Records_N,Single_Node_Time_Sec,PySpark_Time_Sec,Relative_Speedup,Regime
+1x,50,0.0612,25.421,0.0,Overhead Dominated (Cold JVM)
+10x,500,1.482,5.412,0.27,Overhead Dominated
+100x,5000,6.845,4.198,1.63,Parallel Accelerated (Crossover)
+1000x,50000,71.854,13.818,5.2,Massive Parallel Speedup (5.20x)

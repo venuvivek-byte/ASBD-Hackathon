@@ -1,0 +1,92 @@
+{
+    "plot01_hist_value": {
+        "title": "Distribution of Team Valuations ($ Billions)",
+        "file": "plot01_hist_value.png",
+        "type": "Histogram with KDE",
+        "inference": "The valuation distribution exhibits a strong positive (right) skew, with over 60% of top-50 teams clustered between $2.4B and $3.5B. A distinct elite tier (Cowboys, Yankees, Knicks) pulls the right tail above $5.0B, creating a notable gap between the median ($3.2B) and top performers."
+    },
+    "plot02_box_value_sport": {
+        "title": "Team Valuation by Sport Category",
+        "file": "plot02_box_value_sport.png",
+        "type": "Box Plot with Stripplot",
+        "inference": "NFL (American Football) maintains the highest median valuation and remarkable consistency due to revenue parity and collective media agreements. In contrast, Soccer features a wide interquartile range with elite European clubs competing at the $4B+ apex."
+    },
+    "plot03_bar_top10": {
+        "title": "Top 10 Most Valuable Sports Franchises Worldwide",
+        "file": "plot03_bar_top10.png",
+        "type": "Horizontal Bar Chart",
+        "inference": "Dallas Cowboys claim the pinnacle ($5.70B), followed by New York Yankees ($5.25B) and New York Knicks ($5.00B). American franchises capture 7 of the top 10 positions, while European football giants Barcelona ($4.76B) and Real Madrid ($4.75B) anchor the global contingent."
+    },
+    "plot04_donut_sport_share": {
+        "title": "Share of Top 50 Franchises by Sport",
+        "file": "plot04_donut_sport_share.png",
+        "type": "Donut Chart",
+        "inference": "American Football (NFL) accounts for an overwhelming 52.0% (26 of 50) of the globe's premier sports properties. Basketball (NBA) holds 18.0%, Soccer accounts for 18.0%, and Baseball (MLB) represents 12.0%, proving the commercial heft of US gridiron football."
+    },
+    "plot05_scatter_price_vs_val": {
+        "title": "Acquisition Price Paid vs. Current Valuation ($B)",
+        "file": "plot05_scatter_price_vs_val.png",
+        "type": "Scatter Plot with Trendline",
+        "inference": "Franchises acquired at modest baseline prices (<$300M in the 20th century) show dramatic multi-thousand-percent capital gains. Newer transactions above $1.5B show contemporary institutional pricing, resulting in higher nominal capital outlays."
+    },
+    "plot06_corr_heatmap": {
+        "title": "Pearson Correlation Matrix of Financial Metrics",
+        "file": "plot06_corr_heatmap.png",
+        "type": "Correlation Heatmap",
+        "inference": "Years Held exhibits a strong negative correlation with Year Purchased (-1.00) and a moderate negative correlation with Price Paid (-0.57), verifying inflation and skyrocketing franchise values over successive ownership eras. Value correlates weakly with 5-year growth (-0.04), indicating mature market resilience."
+    },
+    "plot07_violin_growth_sport": {
+        "title": "5-Year Valuation Growth Rate Distribution by Sport",
+        "file": "plot07_violin_growth_sport.png",
+        "type": "Violin Plot",
+        "inference": "Soccer and select NBA teams show wide, tall violin profiles with long tails extending past 150%-200% growth (e.g., PSG at 207%, Liverpool at 165%), driven by international branding. The NFL exhibits a compact bell distribution clustered tightly around 50%-65%."
+    },
+    "plot08_pairplot": {
+        "title": "Multivariate Pairwise Feature Relationships by Sport",
+        "file": "plot08_pairplot.png",
+        "type": "Pair Plot",
+        "inference": "Bivariate distributions demonstrate distinct cluster boundaries: Soccer occupies the high-growth perimeter, MLB occupies moderate value and moderate acquisition prices, and NFL dominates the central high-density valuation core."
+    },
+    "plot09_line_vintage_trend": {
+        "title": "Average Franchise Valuation & Growth by Purchase Decade",
+        "file": "plot09_line_vintage_trend.png",
+        "type": "Dual-Axis Line Chart",
+        "inference": "Franchises held since the 1920s-1970s maintain remarkably resilient multi-billion-dollar values. Meanwhile, franchises bought during the 2000s and 2010s show accelerated recent 5-year percentage valuation gains due to modernization and global streaming monetization."
+    },
+    "plot10_qq_density": {
+        "title": "Normality Diagnostics (Q-Q & Density)",
+        "file": "plot10_qq_density.png",
+        "type": "Q-Q and KDE Density Plot",
+        "inference": "The Q-Q plot exhibits pronounced convex curvature at upper quantiles, confirming heavy positive skewness. This violates standard Gaussian assumptions, strongly justifying nonparametric and tree-based data mining methods (such as FP-Growth and Naive Bayes discretization)."
+    },
+    "plot11_stacked_sport_country": {
+        "title": "Geographic Country Distribution by Sport Discipline",
+        "file": "plot11_stacked_sport_country.png",
+        "type": "Stacked Bar Chart",
+        "inference": "American Football, Baseball, and Basketball are 100% geographically concentrated in the USA. Conversely, the Soccer category is partitioned across the UK (5 teams), Spain (2 teams), Germany (1 team), and France (1 team), illustrating Europe's polycentric soccer landscape."
+    },
+    "plot12_bubble_valuation": {
+        "title": "Valuation vs. 5-Year Growth Rate (Bubble Size = Years Held)",
+        "file": "plot12_bubble_valuation.png",
+        "type": "Bubble Chart",
+        "inference": "Franchises held for decades (largest bubbles) occupy the upper valuation plateau with steady compound gains. Outlying high-growth properties (e.g., Golden State Warriors, LA Rams, PSG) are medium-sized bubbles purchased in the modern era, capturing rapid franchise re-evaluations."
+    },
+    "plot13_confusion_matrix_nb": {
+        "title": "Naive Bayes Valuation Tier Confusion Matrix",
+        "file": "plot13_confusion_matrix_nb.png",
+        "type": "Confusion Matrix Heatmap",
+        "inference": "Naive Bayes achieves balanced classification on the test set across High, Med, and Low tiers using non-collinear predictors (League, Growth_Tier, Price_Tier, Tenure_Tier). Errors are restricted strictly to adjacent boundary tiers, confirming robust probabilistic calibration without collinear bias."
+    },
+    "plot14_agnes_dendrogram": {
+        "title": "AGNES Hierarchical Clustering Dendrogram (Ward Linkage)",
+        "file": "plot14_agnes_dendrogram.png",
+        "type": "Hierarchical Dendrogram with Cut Line",
+        "inference": "The dendrogram evaluated without collinear year duplication exhibits strong cophenetic correlation (0.7351) and silhouette score (0.3764), partitioning franchises into 3 macro-clusters: Recent High-Capital Takeovers (7 teams), Hyper-Growth Outliers (4 teams), and Historic Blue-Chip Franchises (39 teams)."
+    },
+    "plot15_pyspark_speedup": {
+        "title": "Distributed Scaling Speedup and Execution Runtime Benchmark",
+        "file": "plot15_pyspark_speedup.png",
+        "type": "Dual-Panel Scaling & Speedup Diagnostic",
+        "inference": "Empirical verification of distributed computing crossover dynamics: At 1x (N=50) and 10x (N=500), single-node Scikit-Learn outperforms distributed engines (speedup 0.05x - 0.25x) due to master-driver coordination, data partitioning, and IPC socket serialization overhead. However, as data scales to 100x (N=5,000) and 1000x (N=50,000), computational complexity amortizes coordination latency, crossing the parity threshold (1.0x) and achieving substantial parallel speedup across 16 executor cores."
+    }
+}

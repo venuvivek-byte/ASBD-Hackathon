@@ -1,0 +1,34 @@
+{
+    "linkage_method": "ward",
+    "cophenetic_correlation": 0.7351,
+    "num_clusters_k": 3,
+    "silhouette_score": 0.3764,
+    "cut_height_threshold": 8.42,
+    "cluster_profiles": {
+        "Franchise_Count": {
+            "1": 7,
+            "2": 4,
+            "3": 39
+        },
+        "Value_USD_B": {
+            "1": 2.9528571428571433,
+            "2": 3.825,
+            "3": 3.471282051282051
+        },
+        "Five_Year_Change_Pct": {
+            "1": 48.857142857142854,
+            "2": 173.75,
+            "3": 56.94871794871795
+        },
+        "Price_Paid_USD_M": {
+            "1": 2214.285714285714,
+            "2": 444.0,
+            "3": 333.7540564102564
+        },
+        "Years_Held": {
+            "1": 6.0,
+            "2": 10.75,
+            "3": 33.717948717948715
+        }
+    }
+}

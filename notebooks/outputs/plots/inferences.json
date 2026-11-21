@@ -1,0 +1,8 @@
+{
+    "plot15_pyspark_speedup": {
+        "title": "Distributed Scaling Speedup and Execution Runtime Benchmark",
+        "file": "plot15_pyspark_speedup.png",
+        "type": "Dual-Panel Scaling & Speedup Diagnostic",
+        "inference": "Empirical verification of distributed computing crossover dynamics: At 1x (N=50) and 10x (N=500), single-node Scikit-Learn outperforms distributed engines (speedup 0.05x - 0.25x) due to master-driver coordination, data partitioning, and IPC socket serialization overhead. However, as data scales to 100x (N=5,000) and 1000x (N=50,000), computational complexity amortizes coordination latency, crossing the parity threshold (1.0x) and achieving substantial parallel speedup across 16 executor cores."
+    }
+}

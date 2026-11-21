@@ -1,0 +1,285 @@
+support,itemsets,count,length
+0.82,frozenset({'Country_USA'}),41,1
+0.52,"frozenset({'Country_USA', 'League_NFL', 'Sport_American Football'})",26,3
+0.52,"frozenset({'League_NFL', 'Sport_American Football'})",26,2
+0.52,"frozenset({'Country_USA', 'Sport_American Football'})",26,2
+0.52,"frozenset({'Country_USA', 'League_NFL'})",26,2
+0.52,frozenset({'Sport_American Football'}),26,1
+0.52,frozenset({'League_NFL'}),26,1
+0.36,frozenset({'Tenure_Short'}),18,1
+0.34,frozenset({'PricePaid_Med'}),17,1
+0.34,frozenset({'Growth_Low'}),17,1
+0.34,frozenset({'Value_High'}),17,1
+0.34,frozenset({'Growth_High'}),17,1
+0.34,frozenset({'PricePaid_Low'}),17,1
+0.34,frozenset({'Value_Low'}),17,1
+0.32,"frozenset({'Country_USA', 'PricePaid_Low'})",16,2
+0.32,"frozenset({'Country_USA', 'Tenure_Long'})",16,2
+0.32,frozenset({'Growth_Med'}),16,1
+0.32,frozenset({'Value_Med'}),16,1
+0.32,frozenset({'Tenure_Long'}),16,1
+0.32,frozenset({'PricePaid_High'}),16,1
+0.32,frozenset({'Tenure_Med'}),16,1
+0.3,"frozenset({'Country_USA', 'PricePaid_Low', 'Tenure_Long'})",15,3
+0.3,"frozenset({'PricePaid_Low', 'Tenure_Long'})",15,2
+0.3,"frozenset({'Country_USA', 'Growth_Med'})",15,2
+0.3,"frozenset({'Country_USA', 'Value_Low'})",15,2
+0.3,"frozenset({'Country_USA', 'Value_Med'})",15,2
+0.28,"frozenset({'PricePaid_High', 'Country_USA'})",14,2
+0.26,"frozenset({'Country_USA', 'League_NFL', 'PricePaid_Low', 'Sport_American Football'})",13,4
+0.26,"frozenset({'Country_USA', 'League_NFL', 'PricePaid_Low'})",13,3
+0.26,"frozenset({'Country_USA', 'PricePaid_Low', 'Sport_American Football'})",13,3
+0.26,"frozenset({'League_NFL', 'PricePaid_Low', 'Sport_American Football'})",13,3
+0.26,"frozenset({'Country_USA', 'Tenure_Short'})",13,2
+0.26,"frozenset({'Growth_Low', 'Country_USA'})",13,2
+0.26,"frozenset({'League_NFL', 'PricePaid_Low'})",13,2
+0.26,"frozenset({'PricePaid_Low', 'Sport_American Football'})",13,2
+0.26,"frozenset({'Country_USA', 'Growth_High'})",13,2
+0.26,"frozenset({'PricePaid_High', 'Tenure_Short'})",13,2
+0.24,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Long', 'Sport_American Football', 'PricePaid_Low'})",12,5
+0.24,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Long', 'Sport_American Football'})",12,4
+0.24,"frozenset({'Country_USA', 'PricePaid_Low', 'Tenure_Long', 'Sport_American Football'})",12,4
+0.24,"frozenset({'League_NFL', 'PricePaid_Low', 'Tenure_Long', 'Sport_American Football'})",12,4
+0.24,"frozenset({'Country_USA', 'League_NFL', 'PricePaid_Low', 'Tenure_Long'})",12,4
+0.24,"frozenset({'Country_USA', 'Tenure_Long', 'Sport_American Football'})",12,3
+0.24,"frozenset({'League_NFL', 'Tenure_Long', 'Sport_American Football'})",12,3
+0.24,"frozenset({'League_NFL', 'PricePaid_Low', 'Tenure_Long'})",12,3
+0.24,"frozenset({'PricePaid_Low', 'Tenure_Long', 'Sport_American Football'})",12,3
+0.24,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Long'})",12,3
+0.24,"frozenset({'Tenure_Long', 'Sport_American Football'})",12,2
+0.24,"frozenset({'Tenure_Med', 'PricePaid_Med'})",12,2
+0.24,"frozenset({'Country_USA', 'Tenure_Med'})",12,2
+0.24,"frozenset({'League_NFL', 'Tenure_Long'})",12,2
+0.22,"frozenset({'PricePaid_High', 'Country_USA', 'Tenure_Short'})",11,3
+0.22,"frozenset({'Country_USA', 'PricePaid_Med'})",11,2
+0.22,"frozenset({'Value_High', 'Country_USA'})",11,2
+0.22,"frozenset({'Value_Low', 'Tenure_Short'})",11,2
+0.2,"frozenset({'Country_USA', 'League_NFL', 'Value_Med', 'Sport_American Football'})",10,4
+0.2,"frozenset({'Country_USA', 'League_NFL', 'Value_Low', 'Sport_American Football'})",10,4
+0.2,"frozenset({'Country_USA', 'League_NFL', 'Growth_Med', 'Sport_American Football'})",10,4
+0.2,"frozenset({'Country_USA', 'League_NFL', 'Value_Med'})",10,3
+0.2,"frozenset({'Country_USA', 'Value_Med', 'Sport_American Football'})",10,3
+0.2,"frozenset({'League_NFL', 'Value_Med', 'Sport_American Football'})",10,3
+0.2,"frozenset({'Country_USA', 'League_NFL', 'Value_Low'})",10,3
+0.2,"frozenset({'Country_USA', 'League_NFL', 'Growth_Med'})",10,3
+0.2,"frozenset({'Country_USA', 'Value_Low', 'Sport_American Football'})",10,3
+0.2,"frozenset({'League_NFL', 'Value_Low', 'Sport_American Football'})",10,3
+0.2,"frozenset({'League_NFL', 'Growth_Med', 'Sport_American Football'})",10,3
+0.2,"frozenset({'Country_USA', 'Growth_Med', 'Sport_American Football'})",10,3
+0.2,"frozenset({'Value_Low', 'Sport_American Football'})",10,2
+0.2,"frozenset({'Growth_High', 'PricePaid_Med'})",10,2
+0.2,"frozenset({'League_NFL', 'Value_Low'})",10,2
+0.2,"frozenset({'League_NFL', 'Value_Med'})",10,2
+0.2,"frozenset({'Value_Med', 'Sport_American Football'})",10,2
+0.2,"frozenset({'Growth_Med', 'Sport_American Football'})",10,2
+0.2,"frozenset({'League_NFL', 'Growth_Med'})",10,2
+0.18,"frozenset({'Country_USA', 'Value_Low', 'Tenure_Short'})",9,3
+0.18,"frozenset({'Country_USA', 'League_NBA', 'Sport_Basketball'})",9,3
+0.18,"frozenset({'PricePaid_High', 'Value_Low', 'Tenure_Short'})",9,3
+0.18,"frozenset({'PricePaid_High', 'Value_Low'})",9,2
+0.18,"frozenset({'Country_USA', 'League_NBA'})",9,2
+0.18,"frozenset({'Country_USA', 'Sport_Basketball'})",9,2
+0.18,"frozenset({'League_NBA', 'Sport_Basketball'})",9,2
+0.18,frozenset({'Sport_Soccer'}),9,1
+0.18,frozenset({'Sport_Basketball'}),9,1
+0.18,frozenset({'League_NBA'}),9,1
+0.16,"frozenset({'Country_USA', 'Growth_Low', 'League_NFL', 'Sport_American Football'})",8,4
+0.16,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Med', 'Sport_American Football'})",8,4
+0.16,"frozenset({'Country_USA', 'League_NFL', 'Growth_High', 'Sport_American Football'})",8,4
+0.16,"frozenset({'PricePaid_High', 'Country_USA', 'Value_Low', 'Tenure_Short'})",8,4
+0.16,"frozenset({'PricePaid_High', 'Country_USA', 'League_NFL', 'Sport_American Football'})",8,4
+0.16,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Med'})",8,3
+0.16,"frozenset({'Country_USA', 'League_NFL', 'Growth_High'})",8,3
+0.16,"frozenset({'Growth_Low', 'League_NFL', 'Country_USA'})",8,3
+0.16,"frozenset({'Country_USA', 'Growth_Low', 'Sport_American Football'})",8,3
+0.16,"frozenset({'League_NFL', 'Growth_High', 'Sport_American Football'})",8,3
+0.16,"frozenset({'Country_USA', 'Growth_High', 'Sport_American Football'})",8,3
+0.16,"frozenset({'Country_USA', 'Tenure_Med', 'Sport_American Football'})",8,3
+0.16,"frozenset({'Growth_Low', 'League_NFL', 'Sport_American Football'})",8,3
+0.16,"frozenset({'Country_USA', 'Tenure_Med', 'PricePaid_Med'})",8,3
+0.16,"frozenset({'League_NFL', 'Tenure_Med', 'Sport_American Football'})",8,3
+0.16,"frozenset({'PricePaid_High', 'Country_USA', 'League_NFL'})",8,3
+0.16,"frozenset({'PricePaid_High', 'Country_USA', 'Sport_American Football'})",8,3
+0.16,"frozenset({'PricePaid_High', 'League_NFL', 'Sport_American Football'})",8,3
+0.16,"frozenset({'PricePaid_High', 'Country_USA', 'Value_Low'})",8,3
+0.16,"frozenset({'Value_High', 'Growth_Low'})",8,2
+0.16,"frozenset({'Value_High', 'PricePaid_Med'})",8,2
+0.16,"frozenset({'League_NFL', 'Tenure_Med'})",8,2
+0.16,"frozenset({'Growth_Low', 'League_NFL'})",8,2
+0.16,"frozenset({'Tenure_Med', 'Sport_American Football'})",8,2
+0.16,"frozenset({'Growth_Low', 'Sport_American Football'})",8,2
+0.16,"frozenset({'Growth_High', 'Sport_American Football'})",8,2
+0.16,"frozenset({'League_NFL', 'Growth_High'})",8,2
+0.16,"frozenset({'Tenure_Med', 'Value_Med'})",8,2
+0.16,"frozenset({'Tenure_Short', 'Growth_High'})",8,2
+0.16,"frozenset({'PricePaid_High', 'Growth_Low'})",8,2
+0.16,"frozenset({'PricePaid_High', 'League_NFL'})",8,2
+0.16,"frozenset({'PricePaid_High', 'Sport_American Football'})",8,2
+0.14,"frozenset({'Tenure_Long', 'Country_USA', 'PricePaid_Low', 'Value_Med'})",7,4
+0.14,"frozenset({'PricePaid_Low', 'Country_USA', 'Growth_Med', 'Tenure_Long'})",7,4
+0.14,"frozenset({'Growth_High', 'Country_USA', 'PricePaid_Med'})",7,3
+0.14,"frozenset({'Country_USA', 'PricePaid_Low', 'Value_Med'})",7,3
+0.14,"frozenset({'Country_USA', 'Growth_Med', 'Tenure_Long'})",7,3
+0.14,"frozenset({'Country_USA', 'Tenure_Med', 'Value_Med'})",7,3
+0.14,"frozenset({'Country_USA', 'Growth_Med', 'Value_Low'})",7,3
+0.14,"frozenset({'Tenure_Long', 'PricePaid_Low', 'Value_Med'})",7,3
+0.14,"frozenset({'Tenure_Long', 'Country_USA', 'Value_Med'})",7,3
+0.14,"frozenset({'PricePaid_Low', 'Growth_Med', 'Tenure_Long'})",7,3
+0.14,"frozenset({'PricePaid_Low', 'Country_USA', 'Growth_Med'})",7,3
+0.14,"frozenset({'PricePaid_Low', 'Value_Med'})",7,2
+0.14,"frozenset({'Value_Low', 'Growth_High'})",7,2
+0.14,"frozenset({'Growth_Low', 'Tenure_Med'})",7,2
+0.14,"frozenset({'Tenure_Long', 'Value_Med'})",7,2
+0.14,"frozenset({'Growth_Med', 'Tenure_Long'})",7,2
+0.14,"frozenset({'PricePaid_Low', 'Growth_Med'})",7,2
+0.14,"frozenset({'Growth_Med', 'Value_Low'})",7,2
+0.12,"frozenset({'Growth_Med', 'League_NFL', 'Country_USA', 'Tenure_Long', 'Sport_American Football', 'PricePaid_Low'})",6,6
+0.12,"frozenset({'Country_USA', 'League_NFL', 'Sport_American Football', 'Growth_Med', 'Value_Low'})",6,5
+0.12,"frozenset({'Growth_Med', 'League_NFL', 'Country_USA', 'Sport_American Football', 'PricePaid_Low'})",6,5
+0.12,"frozenset({'Growth_Med', 'League_NFL', 'Tenure_Long', 'Sport_American Football', 'PricePaid_Low'})",6,5
+0.12,"frozenset({'Growth_Med', 'Country_USA', 'Tenure_Long', 'Sport_American Football', 'PricePaid_Low'})",6,5
+0.12,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Long', 'Sport_American Football', 'Growth_Med'})",6,5
+0.12,"frozenset({'Growth_Med', 'League_NFL', 'Country_USA', 'Tenure_Long', 'PricePaid_Low'})",6,5
+0.12,"frozenset({'PricePaid_Low', 'Country_USA', 'League_NFL', 'Growth_Med'})",6,4
+0.12,"frozenset({'Value_High', 'Country_USA', 'League_NFL', 'Sport_American Football'})",6,4
+0.12,"frozenset({'Sport_American Football', 'League_NFL', 'Growth_Med', 'Value_Low'})",6,4
+0.12,"frozenset({'PricePaid_Low', 'Country_USA', 'Growth_Med', 'Sport_American Football'})",6,4
+0.12,"frozenset({'PricePaid_Low', 'League_NFL', 'Growth_Med', 'Sport_American Football'})",6,4
+0.12,"frozenset({'Country_USA', 'League_NFL', 'Growth_Med', 'Value_Low'})",6,4
+0.12,"frozenset({'Sport_American Football', 'Country_USA', 'Growth_Med', 'Value_Low'})",6,4
+0.12,"frozenset({'League_NFL', 'Growth_Med', 'Tenure_Long', 'Sport_American Football'})",6,4
+0.12,"frozenset({'PricePaid_Low', 'Growth_Med', 'Tenure_Long', 'Sport_American Football'})",6,4
+0.12,"frozenset({'Country_USA', 'Growth_Med', 'Tenure_Long', 'Sport_American Football'})",6,4
+0.12,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Short', 'Sport_American Football'})",6,4
+0.12,"frozenset({'PricePaid_Low', 'League_NFL', 'Growth_Med', 'Tenure_Long'})",6,4
+0.12,"frozenset({'Country_USA', 'League_NFL', 'Growth_Med', 'Tenure_Long'})",6,4
+0.12,"frozenset({'Value_High', 'Country_USA', 'Sport_American Football'})",6,3
+0.12,"frozenset({'Value_High', 'League_NFL', 'Sport_American Football'})",6,3
+0.12,"frozenset({'PricePaid_Low', 'League_NFL', 'Growth_Med'})",6,3
+0.12,"frozenset({'Country_USA', 'Value_Low', 'Growth_High'})",6,3
+0.12,"frozenset({'Value_High', 'Country_USA', 'League_NFL'})",6,3
+0.12,"frozenset({'Growth_Low', 'PricePaid_Low', 'Country_USA'})",6,3
+0.12,"frozenset({'PricePaid_Low', 'Growth_Med', 'Sport_American Football'})",6,3
+0.12,"frozenset({'PricePaid_High', 'Growth_Low', 'Country_USA'})",6,3
+0.12,"frozenset({'League_NFL', 'Growth_Med', 'Value_Low'})",6,3
+0.12,"frozenset({'Sport_American Football', 'Growth_Med', 'Value_Low'})",6,3
+0.12,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Short'})",6,3
+0.12,"frozenset({'League_NFL', 'Tenure_Short', 'Sport_American Football'})",6,3
+0.12,"frozenset({'Country_USA', 'Tenure_Short', 'Sport_American Football'})",6,3
+0.12,"frozenset({'Country_USA', 'League_MLB', 'Sport_Baseball'})",6,3
+0.12,"frozenset({'Growth_Low', 'Value_Med', 'Country_USA'})",6,3
+0.12,"frozenset({'Country_USA', 'Growth_Med', 'Value_Med'})",6,3
+0.12,"frozenset({'Growth_Med', 'Tenure_Long', 'Sport_American Football'})",6,3
+0.12,"frozenset({'League_NFL', 'Growth_Med', 'Tenure_Long'})",6,3
+0.12,"frozenset({'Tenure_Med', 'Value_Med', 'PricePaid_Med'})",6,3
+0.12,"frozenset({'Value_High', 'Sport_American Football'})",6,2
+0.12,"frozenset({'Value_High', 'League_NFL'})",6,2
+0.12,"frozenset({'Value_High', 'Tenure_Short'})",6,2
+0.12,"frozenset({'Growth_Low', 'PricePaid_Low'})",6,2
+0.12,"frozenset({'Value_High', 'Growth_High'})",6,2
+0.12,"frozenset({'Sport_Soccer', 'PricePaid_Med'})",6,2
+0.12,"frozenset({'Value_High', 'Sport_Soccer'})",6,2
+0.12,"frozenset({'Value_Med', 'PricePaid_Med'})",6,2
+0.12,"frozenset({'Value_High', 'Tenure_Med'})",6,2
+0.12,"frozenset({'Country_USA', 'League_MLB'})",6,2
+0.12,"frozenset({'Tenure_Short', 'Sport_American Football'})",6,2
+0.12,"frozenset({'League_NFL', 'Tenure_Short'})",6,2
+0.12,"frozenset({'Country_USA', 'Sport_Baseball'})",6,2
+0.12,"frozenset({'League_MLB', 'Sport_Baseball'})",6,2
+0.12,"frozenset({'Growth_Low', 'Value_Med'})",6,2
+0.12,"frozenset({'Growth_Med', 'Value_Med'})",6,2
+0.12,frozenset({'League_MLB'}),6,1
+0.12,frozenset({'Sport_Baseball'}),6,1
+0.1,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Long', 'Value_Med', 'Sport_American Football', 'PricePaid_Low'})",5,6
+0.1,"frozenset({'Country_USA', 'League_NFL', 'Sport_American Football', 'Value_Low', 'Tenure_Short'})",5,5
+0.1,"frozenset({'Country_USA', 'League_NFL', 'Value_Med', 'Sport_American Football', 'PricePaid_Low'})",5,5
+0.1,"frozenset({'PricePaid_High', 'Country_USA', 'League_NFL', 'Sport_American Football', 'Tenure_Short'})",5,5
+0.1,"frozenset({'Growth_Low', 'League_NFL', 'Country_USA', 'Sport_American Football', 'Tenure_Med'})",5,5
+0.1,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Long', 'Value_Med', 'PricePaid_Low'})",5,5
+0.1,"frozenset({'Country_USA', 'League_NFL', 'Value_Med', 'Sport_American Football', 'Tenure_Med'})",5,5
+0.1,"frozenset({'League_NFL', 'Tenure_Long', 'Value_Med', 'Sport_American Football', 'PricePaid_Low'})",5,5
+0.1,"frozenset({'Country_USA', 'Tenure_Long', 'Value_Med', 'Sport_American Football', 'PricePaid_Low'})",5,5
+0.1,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Long', 'Value_Med', 'Sport_American Football'})",5,5
+0.1,"frozenset({'Country_USA', 'League_NFL', 'PricePaid_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Country_USA', 'League_NBA', 'PricePaid_Med', 'Sport_Basketball'})",5,4
+0.1,"frozenset({'Country_USA', 'Value_Low', 'Tenure_Short', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Country_USA', 'League_NFL', 'Value_Low', 'Tenure_Short'})",5,4
+0.1,"frozenset({'League_NFL', 'Value_Low', 'Tenure_Short', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Country_USA', 'League_NBA', 'Growth_High', 'Sport_Basketball'})",5,4
+0.1,"frozenset({'League_NFL', 'PricePaid_Low', 'Value_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Country_USA', 'PricePaid_Low', 'Value_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Country_USA', 'League_NFL', 'PricePaid_Low', 'Value_Med'})",5,4
+0.1,"frozenset({'Country_USA', 'Tenure_Med', 'Value_Med', 'PricePaid_Med'})",5,4
+0.1,"frozenset({'PricePaid_High', 'League_NFL', 'Tenure_Short', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Growth_Low', 'League_NFL', 'Tenure_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Country_USA', 'Growth_Low', 'Tenure_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Growth_Low', 'League_NFL', 'Tenure_Med', 'Country_USA'})",5,4
+0.1,"frozenset({'Growth_Low', 'PricePaid_Low', 'Tenure_Long', 'Country_USA'})",5,4
+0.1,"frozenset({'Tenure_Long', 'Country_USA', 'League_NFL', 'Value_Med'})",5,4
+0.1,"frozenset({'Tenure_Long', 'League_NFL', 'PricePaid_Low', 'Value_Med'})",5,4
+0.1,"frozenset({'PricePaid_High', 'Country_USA', 'Growth_Med', 'Tenure_Short'})",5,4
+0.1,"frozenset({'PricePaid_High', 'Country_USA', 'League_NFL', 'Tenure_Short'})",5,4
+0.1,"frozenset({'League_NFL', 'Tenure_Med', 'Value_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Country_USA', 'Tenure_Med', 'Value_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Country_USA', 'League_NFL', 'Tenure_Med', 'Value_Med'})",5,4
+0.1,"frozenset({'PricePaid_High', 'Country_USA', 'Tenure_Short', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Tenure_Long', 'PricePaid_Low', 'Value_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Tenure_Long', 'League_NFL', 'Value_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'Tenure_Long', 'Country_USA', 'Value_Med', 'Sport_American Football'})",5,4
+0.1,"frozenset({'League_NFL', 'PricePaid_Med', 'Sport_American Football'})",5,3
+0.1,"frozenset({'Country_UK', 'Sport_Soccer', 'League_Premier League'})",5,3
+0.1,"frozenset({'Country_USA', 'PricePaid_Med', 'Sport_American Football'})",5,3
+0.1,"frozenset({'Country_USA', 'League_NFL', 'PricePaid_Med'})",5,3
+0.1,"frozenset({'Value_Low', 'Tenure_Short', 'Sport_American Football'})",5,3
+0.1,"frozenset({'League_NBA', 'Growth_High', 'Sport_Basketball'})",5,3
+0.1,"frozenset({'Country_USA', 'PricePaid_Med', 'Sport_Basketball'})",5,3
+0.1,"frozenset({'Value_High', 'Growth_Low', 'Country_USA'})",5,3
+0.1,"frozenset({'League_NBA', 'PricePaid_Med', 'Sport_Basketball'})",5,3
+0.1,"frozenset({'Country_USA', 'League_NBA', 'PricePaid_Med'})",5,3
+0.1,"frozenset({'Country_USA', 'League_NBA', 'Growth_High'})",5,3
+0.1,"frozenset({'Value_High', 'PricePaid_Med', 'Growth_High'})",5,3
+0.1,"frozenset({'Value_High', 'Country_USA', 'PricePaid_Low'})",5,3
+0.1,"frozenset({'Country_USA', 'Growth_High', 'Sport_Basketball'})",5,3
+0.1,"frozenset({'League_NFL', 'Value_Low', 'Tenure_Short'})",5,3
+0.1,"frozenset({'PricePaid_High', 'Growth_Low', 'Tenure_Short'})",5,3
+0.1,"frozenset({'Value_High', 'Sport_Soccer', 'PricePaid_Med'})",5,3
+0.1,"frozenset({'Growth_Low', 'Tenure_Long', 'Country_USA'})",5,3
+0.1,"frozenset({'PricePaid_Low', 'Value_Med', 'Sport_American Football'})",5,3
+0.1,"frozenset({'League_NFL', 'PricePaid_Low', 'Value_Med'})",5,3
+0.1,"frozenset({'Country_USA', 'Value_Med', 'PricePaid_Med'})",5,3
+0.1,"frozenset({'Growth_Low', 'Tenure_Med', 'Sport_American Football'})",5,3
+0.1,"frozenset({'Growth_Low', 'League_NFL', 'Tenure_Med'})",5,3
+0.1,"frozenset({'Growth_Low', 'Tenure_Med', 'Country_USA'})",5,3
+0.1,"frozenset({'PricePaid_Med', 'Tenure_Med', 'Growth_High'})",5,3
+0.1,"frozenset({'Growth_Low', 'PricePaid_Low', 'Tenure_Long'})",5,3
+0.1,"frozenset({'Value_High', 'Country_USA', 'Tenure_Long'})",5,3
+0.1,"frozenset({'Tenure_Long', 'League_NFL', 'Value_Med'})",5,3
+0.1,"frozenset({'Country_USA', 'Growth_Med', 'Tenure_Short'})",5,3
+0.1,"frozenset({'Country_USA', 'Tenure_Short', 'Growth_High'})",5,3
+0.1,"frozenset({'PricePaid_High', 'Country_USA', 'Growth_Med'})",5,3
+0.1,"frozenset({'PricePaid_High', 'Growth_Med', 'Tenure_Short'})",5,3
+0.1,"frozenset({'PricePaid_High', 'League_NFL', 'Tenure_Short'})",5,3
+0.1,"frozenset({'PricePaid_High', 'Tenure_Short', 'Sport_American Football'})",5,3
+0.1,"frozenset({'Tenure_Med', 'Value_Med', 'Sport_American Football'})",5,3
+0.1,"frozenset({'League_NFL', 'Tenure_Med', 'Value_Med'})",5,3
+0.1,"frozenset({'Tenure_Long', 'Value_Med', 'Sport_American Football'})",5,3
+0.1,"frozenset({'Sport_Soccer', 'League_Premier League'})",5,2
+0.1,"frozenset({'Country_UK', 'League_Premier League'})",5,2
+0.1,"frozenset({'PricePaid_Med', 'Sport_American Football'})",5,2
+0.1,"frozenset({'Growth_High', 'Sport_Basketball'})",5,2
+0.1,"frozenset({'Sport_Soccer', 'Tenure_Short'})",5,2
+0.1,"frozenset({'League_NFL', 'PricePaid_Med'})",5,2
+0.1,"frozenset({'PricePaid_Low', 'Value_Low'})",5,2
+0.1,"frozenset({'PricePaid_Med', 'Sport_Basketball'})",5,2
+0.1,"frozenset({'League_NBA', 'PricePaid_Med'})",5,2
+0.1,"frozenset({'League_NBA', 'Growth_High'})",5,2
+0.1,"frozenset({'Value_High', 'PricePaid_Low'})",5,2
+0.1,"frozenset({'Country_UK', 'Sport_Soccer'})",5,2
+0.1,"frozenset({'Growth_Low', 'Tenure_Long'})",5,2
+0.1,"frozenset({'Growth_Med', 'Tenure_Short'})",5,2
+0.1,"frozenset({'Tenure_Med', 'Growth_High'})",5,2
+0.1,"frozenset({'Value_High', 'Tenure_Long'})",5,2
+0.1,"frozenset({'Growth_Low', 'Tenure_Short'})",5,2
+0.1,"frozenset({'PricePaid_High', 'Growth_Med'})",5,2
+0.1,frozenset({'League_Premier League'}),5,1
+0.1,frozenset({'Country_UK'}),5,1

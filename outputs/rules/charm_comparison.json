@@ -1,0 +1,8 @@
+{
+    "min_support": 0.1,
+    "total_frequent_itemsets_FI": 284,
+    "total_closed_frequent_itemsets_CFI": 96,
+    "compression_ratio": 0.662,
+    "compression_percentage": "66.20%",
+    "description": "CHARM produces a lossless, compact representation where no superset has identical support."
+}

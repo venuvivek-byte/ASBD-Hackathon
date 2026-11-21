@@ -1,0 +1,38 @@
+{
+    "model": "Categorical Naive Bayes",
+    "random_state": 42,
+    "train_size": 40,
+    "test_size": 10,
+    "classes": [
+        "High",
+        "Low",
+        "Med"
+    ],
+    "accuracy": 0.4,
+    "precision_macro": 0.3,
+    "recall_macro": 0.4444,
+    "f1_macro": 0.3571,
+    "f1_weighted": 0.3214,
+    "confusion_matrix": [
+        [
+            0,
+            2,
+            2
+        ],
+        [
+            0,
+            2,
+            1
+        ],
+        [
+            1,
+            0,
+            2
+        ]
+    ],
+    "key_if_then_rules": [
+        "IF Price_Tier_Med AND Tenure_Tier_Med THEN Valuation is High (Class Prior: 0.33)",
+        "IF Tenure_Tier_Low AND Price_Tier_High THEN Valuation is Low (Class Prior: 0.35)",
+        "IF League_NFL AND Tenure_Tier_Med THEN Valuation is Med (Class Prior: 0.33)"
+    ]
+}
